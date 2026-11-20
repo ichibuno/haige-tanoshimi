@@ -1,0 +1,1640 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMxMjE0MWMiLz4KICA8IS0tIEdhbWUgY29udHJvbGxlciwgdGlsdGVkIDQ1IGRlZ3JlZXMgYXMgb25lIGdyb3VwIChib2R5LCBELXBhZCwKICAgICAgIGFuZCBidXR0b25zIHRvZ2V0aGVyKSBzbyB0aGUgcGFydHMgY2FuIG5ldmVyIGRyaWZ0IGFwYXJ0LgogICAgICAgTWFyZ2lucyBtZWFzdXJlZCBvbiB0aGUgNjR4NjQgZ3JpZCwgYWZ0ZXIgdGhlIDQ1LWRlZ3JlZSB0aWx0OgogICAgICAgdGhlIGJvZHkgc2l0cyBjZW50ZXJlZCB3aXRoIH44LjAgY2xlYXJhbmNlIG9uIGFsbCBmb3VyIHNpZGVzOwogICAgICAgdGhlIGJsdWUgLyByZWQgLyB5ZWxsb3cgYnV0dG9ucyBzaXQgfjMuMyBmcm9tIHRoZSBib2R5IGVkZ2UKICAgICAgIHRoZXkgZmFjZTsgdGhlIEQtcGFkIHNpdHMgfjYuMCBmcm9tIHRoZSBib2R5IG9uIGl0cyBsZWZ0LCB0b3AsCiAgICAgICBhbmQgYm90dG9tOyB0aGUgRC1wYWQgYW5kIGJ1dHRvbiBjbHVzdGVycyBzaGFyZSB0aGUgc2FtZQogICAgICAgY2VudGVyIGhlaWdodCAoeT0zMiBpbiBsb2NhbCBjb29yZGluYXRlcykuIC0tPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMyIDMyKSByb3RhdGUoLTQ1KSBzY2FsZSgxLjA2MSkgdHJhbnNsYXRlKC0zMiAtMzIpIj4KICAgIDxwYXRoCiAgICAgIGQ9Ik0xNyAxOS4xNSBINDcgQTEwIDEwIDAgMCAxIDU3IDI5LjE1IFYzNC44NSBBMTAgMTAgMCAwIDEgNDcgNDQuODUgSDE3IEExMCAxMCAwIDAgMSA3IDM0Ljg1IFYyOS4xNSBBMTAgMTAgMCAwIDEgMTcgMTkuMTUgWiIKICAgICAgZmlsbD0iI2VjZTllMCIKICAgIC8+CiAgICA8IS0tIEQtcGFkIChsZWZ0KSwgY2VudGVyICgxOS44NSwgMzIpIC0tPgogICAgPHBhdGgKICAgICAgZD0iTTE3LjU1IDI0LjggaDQuNiB2NC45IGg0LjkgdjQuNiBoLTQuOSB2NC45IGgtNC42IHYtNC45IGgtNC45IHYtNC42IGg0LjkgWiIKICAgICAgZmlsbD0iIzEyMTQxYyIKICAgIC8+CiAgICA8IS0tIEFjdGlvbiBidXR0b25zIChyaWdodCwgZGlhbW9uZCBsYXlvdXQsIHRlYW0gY29sb3JzKSwgY2VudGVyICg0NC4xNSwgMzIpIC0tPgogICAgPGNpcmNsZSBjeD0iNDQuMTUiIGN5PSIyNS42NSIgcj0iMy40IiBmaWxsPSIjM2I4MmY2Ii8+CiAgICA8Y2lyY2xlIGN4PSI1MC41IiBjeT0iMzIiIHI9IjMuNCIgZmlsbD0iI2VmNDQ0NCIvPgogICAgPGNpcmNsZSBjeD0iNDQuMTUiIGN5PSIzOC4zNSIgcj0iMy40IiBmaWxsPSIjZWFiMzA4Ii8+CiAgICA8Y2lyY2xlIGN4PSIzNy44IiBjeT0iMzIiIHI9IjMuNCIgZmlsbD0iIzIyYzU1ZSIvPgogIDwvZz4KPC9zdmc+Cg==" />
+    <title>ハイゲFINAL 非公式応援サイト（公開用）</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #12141c;
+        --surface: #1c1f2a;
+        --surface-2: #262a38;
+        --text: #f5f1e8;
+        --dim: #a49e90;
+        --border: #333849;
+        --accent: #f5f1e8;
+        --accent-strong: #f5f1e8;
+        --accent-ink: #12141c;
+        --live: #ff5147;
+        --twitch: #a970ff;
+        --youtube: #ff4d6d;
+        --radius: 14px;
+        --schedule-accent: #b9bbbd;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN",
+          "Hiragino Sans", "Noto Sans JP", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        font-weight: 400;
+      }
+      /* No white focus frame after click/tap anywhere. */
+      :focus, :focus-visible { outline: none; }
+      button, [role="button"], select, summary,
+      input:not([type="checkbox"], [type="radio"]) { min-height: 2rem; }
+      button { font-family: inherit; cursor: pointer; }
+      a { color: inherit; }
+      ul { list-style: none; margin: 0; padding: 0; }
+      p { margin: 0; }
+      h1, h2 { margin: 0; font-weight: 400; }
+
+      .jp-wrap { line-break: strict; word-break: auto-phrase; }
+      .text-pretty { text-wrap: pretty; }
+      .sr-only {
+        position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+        overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+      }
+
+      @keyframes live-pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.45; transform: scale(0.8); }
+      }
+      .live-dot {
+        display: inline-block; border-radius: 9999px; background: #ff5147;
+        animation: live-pulse 1.6s ease-in-out infinite;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .live-dot { animation: none; }
+      }
+
+      .wrap { margin: 0 auto; width: 100%; max-width: 1280px; padding: 0 16px 40px; }
+      main { display: block; }
+
+      /* ---------- sticky header ---------- */
+      .site-header {
+        position: sticky; top: 0; z-index: 40;
+        margin: 0 -16px; padding: 10px 16px;
+        border-bottom: 1px solid var(--border);
+        background: var(--bg);
+      }
+      @media (min-width: 640px) { .site-header { padding-top: 6px; padding-bottom: 6px; } }
+      .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+      .header-col { display: flex; min-width: 0; flex-direction: column; gap: 11px; }
+      @media (min-width: 640px) { .header-col { gap: 13px; } }
+      .event-line { font-size: 12px; line-height: 1.25; color: var(--dim); }
+      .event-line .ev-name, .event-line .ev-date { display: block; }
+      .event-line .ev-sep { display: none; }
+      @media (min-width: 640px) {
+        .event-line .ev-name, .event-line .ev-date { display: inline; }
+        .event-line .ev-sep { display: inline; }
+      }
+      .site-title {
+        white-space: nowrap; line-height: 1.25;
+        font-size: min(4.2vw, 20px);
+      }
+      @media (min-width: 640px) { .site-title { font-size: 20px; } }
+      .tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+      .tab-btn {
+        border-radius: 9999px; padding: 4px 12px; font-size: 14px; line-height: 1.5;
+        background: var(--surface); color: var(--text); border: 1px solid var(--border);
+      }
+      .tab-btn[aria-pressed="true"] {
+        background: var(--accent); color: var(--accent-ink); border-color: transparent;
+      }
+      .count-badge {
+        display: flex; height: 96px; width: 96px; flex-shrink: 0;
+        align-items: center; justify-content: center; border-radius: 9999px;
+        text-align: center; font-size: 14px; line-height: 1.25; color: var(--text);
+        background: var(--surface); border: 2px solid var(--accent);
+        padding: 6px;
+      }
+      @media (min-width: 640px) { .count-badge { height: 112px; width: 112px; font-size: 16px; } }
+      .count-stack { display: flex; flex-direction: column; align-items: center; }
+      .count-ato { font-size: 11px; line-height: 1; }
+      @media (min-width: 640px) { .count-ato { font-size: 12px; } }
+      .count-num-row { margin-top: 4px; display: flex; align-items: baseline; }
+      .count-num { font-size: 36px; font-weight: 700; line-height: 1; }
+      @media (min-width: 640px) { .count-num { font-size: 48px; } }
+      .count-day { margin-left: 2px; font-size: 16px; line-height: 1; }
+      @media (min-width: 640px) { .count-day { font-size: 18px; } }
+
+      /* ---------- hero (live count) ---------- */
+      .hero { margin-top: 20px; }
+      .hero-row { display: flex; flex-wrap: wrap; align-items: flex-end; column-gap: 16px; row-gap: 8px; }
+      .hero-count { font-size: 20px; line-height: 1; }
+      .hero-meta { padding-bottom: 2px; font-size: 14px; color: var(--dim); }
+
+      /* ---------- link frames ---------- */
+      .link-frame {
+        display: flex; align-items: center; gap: 12px;
+        border-radius: var(--radius); background: var(--surface-2);
+        padding: 12px 16px; border: 2px solid var(--text);
+        text-decoration: none; height: 100%;
+      }
+      .link-chip {
+        display: inline-flex; width: 96px; flex-shrink: 0; align-items: center;
+        justify-content: center; border-radius: 9999px; padding: 4px 10px; font-size: 12px;
+      }
+      .link-text { min-width: 0; }
+      .link-name { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text); }
+      .link-name .note { font-size: 12px; color: var(--dim); }
+      .link-desc { display: block; font-size: 12px; color: var(--dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .link-desc.full { white-space: normal; text-wrap: pretty; }
+      .link-arrow { margin-left: auto; flex-shrink: 0; color: var(--dim); }
+
+      /* ---------- official fold section ---------- */
+      .official {
+        margin-top: 20px; border-radius: var(--radius);
+        background: var(--surface); padding: 16px; border: 2px solid var(--accent);
+      }
+      .official-toggle {
+        display: flex; width: 100%; align-items: center; justify-content: space-between;
+        gap: 8px; text-align: left; background: none; border: 0; padding: 0; color: var(--text);
+        font-size: 16px;
+      }
+      .chev { flex-shrink: 0; font-size: 14px; color: var(--dim); transition: transform 0.15s ease; }
+      .chev.open { transform: rotate(180deg); }
+      .official-body { margin-top: 16px; }
+      .main-broadcast-head { display: flex; align-items: center; gap: 8px; font-size: 16px; }
+      .frames-2 { margin-top: 12px; display: grid; grid-template-columns: 1fr; gap: 8px; }
+      @media (min-width: 640px) { .frames-2 { grid-template-columns: 1fr 1fr; } }
+      .official-note { margin-top: 12px; font-size: 12px; line-height: 1.625; color: var(--dim); }
+      .frames-3 { margin-top: 20px; display: grid; grid-template-columns: 1fr; gap: 12px; }
+      @media (min-width: 1024px) { .frames-3 { grid-template-columns: repeat(3, 1fr); } }
+
+      /* ---------- filter chips ---------- */
+      .filters { margin-top: 20px; }
+      .filter-row { display: flex; flex-wrap: wrap; gap: 8px; }
+      .filter-chip {
+        border-radius: 9999px; padding: 6px 14px; font-size: 14px; line-height: 1.5;
+        background: var(--surface); color: var(--text); border: 1px solid var(--border);
+      }
+      .filter-chip[aria-pressed="true"] {
+        background: var(--accent); color: var(--accent-ink); border-color: transparent;
+      }
+
+      /* ---------- avatars / crowns / game tag ---------- */
+      .avatar-img { border-radius: 9999px; object-fit: cover; flex-shrink: 0; display: block; }
+      .avatar-fallback {
+        border-radius: 9999px; flex-shrink: 0; display: flex; align-items: center;
+        justify-content: center; background: var(--surface-2); color: var(--accent-strong);
+      }
+      .crown { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; }
+      .game-tag { display: inline-flex; height: 20px; max-width: 100%; align-items: center; gap: 4px; color: var(--text); }
+      .game-tag svg { flex-shrink: 0; color: var(--dim); }
+      .game-tag .gname { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; line-height: 20px; }
+      .game-spacer { display: block; height: 20px; }
+      .platform-viewers { display: flex; flex-shrink: 0; align-items: center; gap: 6px; font-size: 11px; line-height: 20px; }
+      .pv-count { color: var(--dim); }
+
+      /* ---------- playable thumbnail / embed ---------- */
+      .thumb-box {
+        position: relative; aspect-ratio: 16 / 9; width: 100%; flex-shrink: 0;
+        overflow: hidden; background: var(--surface-2); display: block;
+      }
+      button.thumb-box { border: 0; padding: 0; text-align: left; font: inherit; color: inherit; }
+      .thumb-still {
+        position: absolute; inset: 0; width: 100%; height: 100%;
+        border: 0; padding: 0; background: none; display: block; cursor: pointer;
+      }
+      .thumb-img { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; }
+      .thumb-box iframe { position: absolute; inset: 0; height: 100%; width: 100%; border: 0; }
+      .play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+      .play-circle {
+        display: flex; height: 48px; width: 48px; align-items: center; justify-content: center;
+        border-radius: 9999px; background: rgba(0,0,0,0.6); color: #fff;
+      }
+      .live-badge {
+        position: absolute; left: 8px; top: 8px; display: inline-flex; align-items: center;
+        gap: 6px; border-radius: 9999px; background: rgba(0,0,0,0.7);
+        padding: 4px 10px; font-size: 12px; color: #fff; z-index: 2;
+      }
+      .live-badge .live-dot { height: 8px; width: 8px; }
+      .elapsed-pill {
+        position: absolute; bottom: 8px; right: 8px; border-radius: 9999px;
+        background: rgba(0,0,0,0.7); padding: 4px 10px; font-size: 12px; color: #fff; z-index: 2;
+      }
+      .embed-close {
+        position: absolute; right: 8px; top: 8px; z-index: 10; display: inline-flex;
+        align-items: center; gap: 4px; border-radius: 9999px; background: rgba(0,0,0,0.75);
+        padding: 4px 10px; font-size: 12px; color: #fff; border: 0;
+      }
+      .embed-hint {
+        position: absolute; left: 0; right: 0; bottom: 0; z-index: 10;
+        background: rgba(0,0,0,0.85); padding: 8px 12px; font-size: 12px; line-height: 20px; color: #fff;
+      }
+      .embed-hint p { margin: 0; }
+      .embed-hint .hint-btns { margin-top: 6px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+      .hint-open {
+        flex-shrink: 0; border-radius: 9999px; background: #fff; padding: 4px 10px;
+        color: var(--accent-ink); text-decoration: none; font-size: 12px;
+      }
+      .hint-sub {
+        flex-shrink: 0; border-radius: 9999px; background: rgba(255,255,255,0.2);
+        padding: 4px 10px; color: #fff; border: 0; font-size: 12px;
+      }
+
+      /* ---------- live cards ---------- */
+      .live-section { margin-top: 24px; }
+      .live-grid { display: grid; grid-auto-rows: 1fr; grid-template-columns: 1fr; gap: 12px; }
+      @media (min-width: 640px) { .live-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (min-width: 1280px) { .live-grid { grid-template-columns: repeat(4, 1fr); } }
+      .live-card {
+        display: flex; flex-direction: column; overflow: hidden;
+        border-radius: var(--radius); background: var(--surface);
+      }
+      .live-card-body { display: flex; flex: 1; flex-direction: column; padding: 12px; }
+      .card-name-row { display: flex; height: 32px; align-items: center; gap: 8px; }
+      .card-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 18px; line-height: 32px; color: var(--text); }
+      .card-title {
+        margin-top: 8px; display: block; height: 24px; overflow: hidden;
+        text-overflow: ellipsis; white-space: nowrap; font-size: 16px; line-height: 24px;
+        color: var(--text); text-decoration: none;
+      }
+      .card-title:hover { text-decoration: underline; text-underline-offset: 2px; }
+      .game-row { margin-top: 4px; display: flex; height: 20px; align-items: center; gap: 8px; }
+      .game-row .grow { display: flex; min-width: 0; flex: 1; align-items: center; }
+      .no-live {
+        border-radius: var(--radius); border: 1px solid var(--border);
+        background: var(--surface); padding: 20px 16px; text-align: center;
+        font-size: 14px; color: var(--dim);
+      }
+
+      /* ---------- roster ---------- */
+      .roster { margin-top: 32px; }
+      .all-grid { display: grid; grid-template-columns: 1fr; column-gap: 16px; row-gap: 24px; }
+      @media (min-width: 640px) { .all-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (min-width: 1280px) { .all-grid { grid-template-columns: repeat(4, 1fr); } }
+      .revengers-wrap { margin-top: 40px; }
+      .team-head { display: flex; height: 32px; align-items: center; gap: 8px; font-size: 18px; }
+      .team-dot { display: inline-block; height: 12px; width: 12px; flex-shrink: 0; border-radius: 9999px; }
+      .team-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .team-count { flex-shrink: 0; font-size: 14px; color: var(--dim); }
+      .team-count .live-n { color: var(--live); }
+      .roster-list { overflow: hidden; border-radius: var(--radius); background: var(--surface); margin-top: 8px; }
+      .stepped { position: relative; margin-top: 8px; display: grid; grid-template-columns: 1fr; align-items: start; }
+      @media (min-width: 640px) { .stepped { grid-template-columns: repeat(2, 1fr); } }
+      @media (min-width: 1280px) { .stepped { grid-template-columns: repeat(4, 1fr); } }
+      .stepped svg.frame { position: absolute; left: 0; top: 0; pointer-events: none; }
+      .stepped ul { position: relative; overflow: hidden; }
+      .prow { border-bottom: 1px solid var(--border); }
+      .prow:last-child { border-bottom: 0; }
+      .prow-inner { padding: 10px 12px; }
+      .prow-top { display: flex; align-items: flex-start; gap: 12px; }
+      .avatar-link { flex-shrink: 0; border-radius: 9999px; text-decoration: none; display: block; }
+      .avatar-link:hover { box-shadow: 0 0 0 2px var(--accent); }
+      .prow-main { min-width: 0; flex: 1; }
+      .prow-name { display: flex; height: 28px; align-items: center; gap: 6px; font-size: 18px; line-height: 28px; }
+      .prow-name .pname { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .prow-title {
+        margin-top: 2px; height: 24px; overflow: hidden; text-overflow: ellipsis;
+        white-space: nowrap; font-size: 16px; line-height: 24px;
+      }
+
+      /* ---------- host card ---------- */
+      .host-card {
+        margin-top: 16px; border-radius: var(--radius); background: var(--surface);
+        padding: 12px 16px; border: 1px solid var(--border);
+      }
+      .host-head { display: flex; width: 100%; column-gap: 10px; }
+      .host-avatar-link { margin-top: 4px; flex-shrink: 0; align-self: flex-start; }
+      .host-toggle {
+        display: flex; min-width: 0; flex: 1; flex-wrap: wrap; align-items: center;
+        column-gap: 10px; row-gap: 6px; text-align: left; background: none; border: 0;
+        padding: 0; color: var(--text); font-size: 16px;
+      }
+      .host-name { min-width: 0; flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 18px; line-height: 32px; }
+      .host-live-group { order: 3; display: flex; min-width: 0; flex-basis: 100%; align-items: center; gap: 8px; }
+      @media (min-width: 640px) { .host-live-group { order: 0; flex-basis: auto; flex: 1; } }
+      .host-live-group .gt-wrap { display: flex; min-width: 0; max-width: 45%; flex-shrink: 1; align-items: center; }
+      .host-sep { flex-shrink: 0; color: var(--dim); }
+      .host-stream-title { min-width: 0; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 16px; color: var(--text); }
+      .host-offline { order: 3; min-width: 0; flex-basis: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 16px; color: var(--dim); }
+      @media (min-width: 640px) { .host-offline { order: 0; flex-basis: auto; flex: 1; } }
+      .host-viewers { flex-shrink: 0; font-size: 11px; line-height: 20px; color: var(--dim); }
+      .host-live-badge {
+        display: inline-flex; flex-shrink: 0; align-items: center; gap: 6px;
+        border-radius: 9999px; background: rgba(0,0,0,0.7); padding: 4px 10px;
+        font-size: 12px; color: #fff;
+      }
+      .host-live-badge .live-dot { height: 8px; width: 8px; }
+      .host-detail-live { margin-top: 12px; display: flex; flex-direction: column; gap: 12px; }
+      @media (min-width: 640px) { .host-detail-live { flex-direction: row; gap: 16px; } }
+      .host-thumb { border-radius: var(--radius); overflow: hidden; }
+      @media (min-width: 640px) { .host-thumb { width: 300px; } }
+      .host-viewers-pill {
+        position: absolute; bottom: 8px; right: 8px; border-radius: 9999px;
+        background: rgba(0,0,0,0.7); padding: 4px 10px; font-size: 12px; color: #fff; z-index: 2;
+      }
+      .host-info { display: flex; min-width: 0; flex: 1; flex-direction: column; }
+      .host-mrhyg { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--dim); }
+      .host-detail-title {
+        margin-top: 6px; display: block; font-size: 16px; line-height: 24px; color: var(--text);
+        text-decoration: none; display: -webkit-box; -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical; overflow: hidden;
+      }
+      .host-detail-title:hover { text-decoration: underline; text-underline-offset: 2px; }
+      .host-game-row { margin-top: 4px; display: flex; height: 20px; align-items: center; }
+      .host-meta-row { margin-top: auto; display: flex; width: 100%; flex-wrap: wrap; align-items: center; column-gap: 12px; row-gap: 8px; padding-top: 8px; }
+      .host-meta { font-size: 12px; line-height: 20px; color: var(--dim); }
+      .host-meta-right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+      .twitch-chip {
+        flex-shrink: 0; border-radius: 9999px; padding: 2px 10px; font-size: 12px;
+        line-height: 20px; color: #fff; background: var(--twitch);
+      }
+      .watch-btn {
+        flex-shrink: 0; border-radius: 9999px; padding: 6px 14px; font-size: 14px;
+        line-height: 20px; background: var(--accent); color: var(--accent-ink); text-decoration: none;
+      }
+      .host-detail-off { margin-top: 12px; }
+      .host-channel-link { margin-top: 8px; display: block; font-size: 14px; color: var(--dim); text-decoration: none; }
+      .host-channel-link:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+      /* ---------- past broadcasts ---------- */
+      .past-head { font-size: 12px; line-height: 20px; color: var(--dim); }
+      .past-list { margin-top: 6px; display: flex; flex-direction: column; gap: 8px; }
+      .past-grid { margin-top: 6px; display: grid; gap: 8px; grid-template-columns: 1fr; }
+      @media (min-width: 640px) { .past-grid { grid-template-columns: repeat(2, 1fr); } }
+      .past-item { display: flex; align-items: center; gap: 10px; text-decoration: none; min-width: 0; }
+      .past-thumb { position: relative; aspect-ratio: 16/9; width: 104px; flex-shrink: 0; overflow: hidden; border-radius: 8px; background: var(--surface-2); }
+      .past-thumb img { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; }
+      .past-texts { min-width: 0; flex: 1; }
+      .past-title { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; line-height: 20px; color: var(--text); }
+      .past-meta { margin-top: 2px; display: block; font-size: 12px; line-height: 20px; color: var(--dim); }
+
+      .page-footer { margin-top: 16px; font-size: 12px; line-height: 1.625; color: var(--dim); }
+
+      /* ---------- schedule page ---------- */
+      .sched-section { margin-top: 32px; }
+      .sched-section.first { margin-top: 20px; }
+      .sched-heading { display: flex; align-items: center; gap: 10px; font-size: 20px; }
+      .sched-bar { display: inline-block; height: 20px; width: 6px; flex-shrink: 0; background: var(--schedule-accent); }
+      .sched-frames { margin-top: 12px; display: grid; grid-template-columns: 1fr; gap: 12px; }
+      @media (min-width: 640px) { .sched-frames { grid-template-columns: repeat(2, 1fr); } }
+      .days-grid { margin-top: 12px; display: grid; grid-template-columns: 1fr; gap: 16px; }
+      @media (min-width: 1024px) { .days-grid { grid-template-columns: repeat(2, 1fr); } }
+      .day-card { overflow: hidden; border-radius: var(--radius); background: var(--surface); border: 2px solid var(--schedule-accent); }
+      .day-band {
+        display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 12px;
+        padding: 12px 16px; background: var(--surface-2);
+        border-bottom: 3px solid var(--schedule-accent);
+      }
+      .day-label { font-size: 24px; line-height: 32px; color: var(--schedule-accent); }
+      .day-date { font-size: 14px; color: var(--dim); }
+      .day-body { padding: 16px; }
+      .chart { display: flex; }
+      .gutter { position: relative; width: 44px; flex-shrink: 0; }
+      .gutter span { position: absolute; right: 8px; font-size: 12px; line-height: 16px; color: var(--dim); }
+      .track { position: relative; flex: 1; border-top: 1px solid var(--border); }
+      .gridlines { position: absolute; inset: 0; }
+      .gridlines span { position: absolute; left: 0; width: 100%; border-top: 1px solid var(--border); opacity: 0.6; }
+      .axis-line { position: absolute; bottom: 0; left: 0; top: 0; width: 2px; background: var(--schedule-accent); }
+      .tblock { position: absolute; padding: 0 4px; }
+      .tblock-inner { position: relative; height: 100%; border-radius: 8px; padding: 8px 12px; background: var(--surface-2); border: 1px solid var(--border); }
+      .tblock-inner.main { border: 2px solid var(--schedule-accent); }
+      .tblock-name { display: block; font-size: 16px; line-height: 24px; color: var(--text); }
+      .tblock-sub { margin-top: 2px; display: block; font-size: 14px; line-height: 20px; color: var(--dim); }
+      .tblock-note { display: block; white-space: nowrap; font-size: 13px; line-height: 20px; color: var(--dim); }
+      .tblock-end { position: absolute; bottom: 8px; left: 12px; font-size: 14px; line-height: 20px; color: var(--dim); }
+      .undated { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
+      .undated p {
+        border-radius: 8px; padding: 10px 12px; font-size: 14px; line-height: 1.625;
+        color: var(--dim); border: 1px dashed var(--schedule-accent); text-wrap: pretty;
+      }
+      .undated .u-name { color: var(--text); }
+
+      .venue-card { margin-top: 12px; border-radius: var(--radius); background: var(--surface); padding: 16px; border: 2px solid var(--schedule-accent); }
+      .venue-row { display: flex; flex-wrap: wrap; align-items: center; column-gap: 12px; row-gap: 8px; }
+      .venue-name { font-size: 18px; }
+      .venue-addr { font-size: 14px; color: var(--dim); }
+      .map-btn {
+        margin-left: auto; display: inline-flex; align-items: center; gap: 4px;
+        border-radius: 9999px; padding: 6px 14px; font-size: 14px; line-height: 1.5;
+        background: var(--schedule-accent); color: #12141c; text-decoration: none;
+      }
+      .stations-label { margin-top: 16px; font-size: 14px; color: var(--dim); }
+      .stations { margin-top: 8px; display: grid; grid-template-columns: 1fr; gap: 8px; }
+      @media (min-width: 640px) { .stations { grid-template-columns: repeat(3, 1fr); } }
+      .station { border-radius: 8px; background: var(--surface-2); padding: 10px 12px; border: 1px solid var(--border); }
+      .station-line1 { display: flex; flex-wrap: wrap; align-items: center; column-gap: 10px; row-gap: 4px; }
+      .station-name { font-size: 18px; line-height: 28px; }
+      .line-chip {
+        flex-shrink: 0; white-space: nowrap; border-radius: 9999px; padding: 2px 8px;
+        font-size: 12px; line-height: 20px;
+      }
+      @media (min-width: 640px) { .line-chip { padding: 2px 10px; font-size: 14px; } }
+      .station-exit { margin-top: 6px; font-size: 14px; line-height: 1.625; color: var(--dim); text-wrap: pretty; }
+
+      .legend { margin-top: 10px; display: flex; flex-wrap: wrap; column-gap: 20px; row-gap: 6px; }
+      .legend li { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--dim); }
+      .legend .dot, .note-dot { height: 6px; width: 6px; flex-shrink: 0; border-radius: 9999px; }
+      .notes-grid { margin-top: 12px; display: grid; grid-auto-rows: 1fr; grid-template-columns: 1fr; gap: 8px; }
+      @media (min-width: 640px) { .notes-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (min-width: 1024px) { .notes-grid { grid-template-columns: repeat(3, 1fr); } }
+      .note-card { height: 100%; border-radius: 8px; background: var(--surface); padding: 12px 14px; border: 1px solid var(--border); }
+      .note-title { font-size: 16px; }
+      .note-points { margin-top: 6px; display: flex; flex-direction: column; gap: 4px; }
+      .note-points li { display: flex; gap: 8px; font-size: 14px; line-height: 1.625; color: var(--dim); }
+      .note-dot { margin-top: 8px; }
+      .note-part { display: inline-block; white-space: nowrap; }
+      .source-line { margin-top: 12px; font-size: 14px; line-height: 1.625; color: var(--dim); text-wrap: pretty; }
+      .source-line a { text-decoration: underline; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap jp-wrap">
+      <header class="site-header">
+        <div class="header-inner">
+          <div class="header-col">
+            <p class="event-line"><span class="ev-name">配信者ハイパーゲーム大会 FINAL</span><span class="ev-sep"> ・ </span><span class="ev-date">11月28日(土)〜29日(日) 東京ドーム</span></p>
+            <h1 class="site-title">ハイゲFINAL 非公式応援サイト</h1>
+            <div class="tabs" role="group" aria-label="ページ切り替え">
+              <button type="button" class="tab-btn" id="tabLive" aria-pressed="true">配信状況</button>
+              <button type="button" class="tab-btn" id="tabSchedule" aria-pressed="false">日程・注意事項</button>
+            </div>
+          </div>
+          <span class="count-badge" id="countBadge" role="img" aria-label=""></span>
+        </div>
+      </header>
+      <main>
+        <div id="livePage"></div>
+        <div id="schedulePage" hidden></div>
+      </main>
+    </div>
+<script>
+"use strict";
+// ---------- fixed snapshot: 2026-11-21 02:55 JST ----------
+// Live statuses are frozen at the snapshot time; elapsed times
+// below are the values as of 02:55. Only the players listed in
+// LIVE are streaming; everyone else is offline.
+var TEAMS = [
+{ key: "k4sen", label: "TEAM k4sen", dot: "#3b82f6"},
+{ key: "SHAKA", label: "TEAM SHAKA", dot: "#ef4444"},
+{ key: "関優太", label: "TEAM 関優太", dot: "#22c55e"},
+{ key: "もこう", label: "TEAM もこう", dot: "#eab308"},
+{ key: "REVENGERS", label: "HYG REVENGERS", dot: "#8e99a6"},
+];
+var MAIN_TEAMS = TEAMS.slice(0, 4);
+var REVENGERS_TEAM = TEAMS[4];
+function teamOf(key) {
+for (var i = 0; i < TEAMS.length; i++) if (TEAMS[i].key === key) return TEAMS[i];
+return null;
+}
+
+// name, team, leader, twitch login, youtube handle, youtube UC id, avatar file
+var ROSTER = [
+["k4sen","k4sen",1,"k4sen","zzxk4sen",null,"k4sen.png"],
+["布団ちゃん","k4sen",0,"indegnasen0706",null,"UC1xFkkJgjzVUm9oZIHQ10yQ","indegnasen0706.png"],
+["ふらんしすこ","k4sen",0,"franciscoow","Francisco_T",null,"franciscoow.png"],
+["あゆたろう","k4sen",0,"ayutarochan",null,"UCAtWRD0PDkNnbzpSr_SMEUw","ayutarochan.png"],
+["柊ツルギ","k4sen",0,"hiiragitsurugi",null,"UCWnQDjlXTLDyYowc3LaHyJQ","hiiragitsurugi.png"],
+["ゆふな","k4sen",0,"yufuna",null,"UCjSeZKF4cMVCsuI9Yk92txg","yufuna.png"],
+["天月","k4sen",0,"cr_amatsuki",null,"UCY_10f4ef0e1T2skAbHBQTg","cr_amatsuki.png"],
+["よしなま","k4sen",0,"yoshinama222",null,"UCqye-Ew9orx1bP1VeKwAIhw","yoshinama222.png"],
+["RaMu","k4sen",0,"ramuzuqun",null,"UCEdiMA-7EUoUzQAXAJDRZUg","ramuzuqun.png"],
+["Foy","k4sen",0,"foy_honmono",null,null,"foy_honmono.png"],
+["ゆゆうた","k4sen",0,"yuyuta0702",null,"UC_fyK3jvMgJKREu5xStatRw","yuyuta0702.png"],
+["SHAKA","SHAKA",1,"fps_shaka",null,"UCCptBfRVhRcrCa01ZtJNqMA","fps_shaka.png"],
+["rion","SHAKA",0,"cr_rion",null,null,"cr_rion.png"],
+["SPYGEA","SHAKA",0,"spygea","spygea",null,"spygea.png"],
+["赤見かるび","SHAKA",0,"akamikarubi",null,"UCih82bzejhO2Qe-CAa3I3UQ","akamikarubi.png"],
+["ボドカ","SHAKA",0,"vodkavdk",null,"UC5zj8qjErGl_peNOXmTyuzQ","vodkavdk.png"],
+["鈴木ノリアキ","SHAKA",0,"suzukinoriaki",null,"UCYw_nhyFHEcltnFG7tlMjWQ","suzukinoriaki.png"],
+["恭一郎","SHAKA",0,"dmf_kyochan",null,"UCXlurN679Hgl2UxJAX493QA","dmf_kyochan.jpg"],
+["伊織もえ","SHAKA",0,"moe_iori",null,"UCl3O3DIsE2phhmzlEihYehg","moe_iori.png"],
+["らっしゃー","SHAKA",0,"rassya12","rassyach",null,"rassya12.png"],
+["ごっちゃん@マイキー","SHAKA",0,"gocchanmikey","マイキーごっちゃん",null,"gocchanmikey.png"],
+["わいわい","SHAKA",0,"crazyraccoonyy",null,"UCSkLRGGIGKOtinamhcy_42g","crazyraccoonyy.png"],
+["関優太","関優太",1,"stylishnoob4","StylishNoob4",null,"stylishnoob4.png"],
+["たいじ","関優太",0,"yaritaiji","Yaritaiji",null,"yaritaiji.png"],
+["すもも","関優太",0,"sumomo_x",null,null,"sumomo_x.png"],
+["Zerost","関優太",0,"zerost_s","Zerost",null,"zerost_s.png"],
+["みゃこ","関優太",0,"myakkomyako",null,"UCexnpU3jHQFC2RY3i4ODGVQ","myakkomyako.png"],
+["渋谷ハル","関優太",0,"shibuyahal",null,"UChLfthKoUV502J7gU9STArg","shibuyahal.png"],
+["あっさりしょこ","関優太",0,"assarisyoko1","Assarisyoko",null,"assarisyoko1.png"],
+["misaco","関優太",0,"misacorin",null,null,"misacorin.png"],
+["おにや","関優太",0,"oniyadayo","o228",null,"oniyadayo.png"],
+["こく兄","関優太",0,"kokujintv","kokujintv",null,"kokujintv.png"],
+["Euriece","関優太",0,"euriece",null,"UCURL9cZ7qoSBfm4TW5GHDjw","euriece.jpg"],
+["もこう","もこう",1,"mokouliszt1",null,"UCZFxcWJS1_iVIFETARRRHZQ","mokouliszt1.png"],
+["Laz","もこう",0,"lazvell","lazvell",null,"lazvell.png"],
+["しんじさん","もこう",0,"shinjifromjapanxd",null,null,"shinjifromjapanxd.png"],
+["バトラ","もこう",0,"batora324","batoradayo",null,"batora324.png"],
+["えなこ","もこう",0,"enako_chan",null,"UCrUdiKv9LERZmG_MKh63Xgg","enako_chan.png"],
+["Biju","もこう",0,"bijusan",null,"UCelyu3V0ml45H3Ulm8RaaDw","bijusan.png"],
+["らいじん","もこう",0,"alfrea","raizinLOL",null,"alfrea.jpg"],
+["yunocy","もこう",0,"yunocy",null,"UC4Aqh8CdHbUOiDTbmhr5N-Q","yunocy.png"],
+["幕末志士・坂本","もこう",0,"bakumatsu_shishi",null,null,"bakumatsu_shishi.png"],
+["スタンミじゃぱん","もこう",0,"sutanmi","nicosutanmi",null,"sutanmi.png"],
+["けんき","もこう",0,"kenki521","Kenki521",null,"kenki521.png"],
+["ありけん","REVENGERS",0,"arikendebu",null,"UC3NHhO0wBaZ5OVxaabcDKrw","arikendebu.png"],
+["キズナアイ","REVENGERS",0,null,null,"UC4YaOt1yT-ZeyB0OmxHgolA",null],
+["Killin9Hit","REVENGERS",0,"killin9hit",null,"UCMEI4RcffOJZUuYIVcim8Zw","killin9hit.png"],
+["こーすけ","REVENGERS",0,"kosuke_saiore","kosukesaiore",null,"kosuke_saiore.png"],
+["ta1yo","REVENGERS",0,"ta1yo_tv",null,"UC8jr3VTOgwtvu-2Pq373k3g","ta1yo_tv.png"],
+["蛇足","REVENGERS",0,"dasoku_aniki",null,"UC7m8inTTYEE0YBiyOTLFe5Q","dasoku_aniki.png"],
+["まざー3","REVENGERS",0,"mother3rd","MOTHER3rd",null,"mother3rd.png"],
+["Masuo","REVENGERS",0,"darkmasuotv",null,"UCCUd6vfPvpPHBWZ6XwXAlRQ","darkmasuotv.png"],
+["YamatoN","REVENGERS",0,"yamatonjp",null,"UCDDj3CtmsImuRmtiMPBzZgg","yamatonjp.png"],
+["ラクシャーナ","REVENGERS",0,"rakshaana",null,null,"rakshaana.png"],
+];
+
+// Snapshot live data keyed by player name:
+// [stream title, game, viewers, elapsed at snapshot]
+var LIVE = {
+"関優太": ["魔法少女ノ魔女裁判", "Magical Girl Witch Trials", 10081, "6時間43分"],
+"柊ツルギ": ["ARC 特訓 死ぬまでやる ARC 2日目", "ARC Raiders", 3230, "4時間49分"],
+"ゆゆうた": ["押忍！！！！！", "Splatoon 3", 4160, "9時間12分"],
+"赤見かるび": ["はいげ練習！〆の参加型かめれおん", "MECCHA CHAMELEON", 2735, "7時間7分"],
+"恭一郎": ["ぱぶじー", "PUBG: BATTLEGROUNDS", 985, "3時間57分"],
+"こく兄": ["11/20譲るな！求めろ！", "WWE 2K26", 974, "1時間29分"],
+"Laz": ["一筋の光を探す 絶望OW部", "Overwatch", 5006, "7時間37分"],
+"しんじさん": ["WWE攻略最前線TV", "WWE 2K26", 3987, "11時間3分"],
+"バトラ": ["XP2000目標", "Splatoon 3", 4633, "2時間45分"],
+"Biju": ["ヴェンデッタ極", "Overwatch", 3073, "10時間45分"],
+"yunocy": ["リングに立ち続ける", "WWE 2K26", 1388, "3時間40分"],
+"蛇足": ["ちょっとだけね", "Overwatch", 163, "5時間56分"],
+};
+
+var HOST = {
+name: "加藤純一",
+twitchLogin: "kato_junichi0817",
+avatarFile: "kato_junichi0817.png",
+live: {
+title: "ROB RUNING純一",
+game: "ROB RUN",
+viewers: 17052,
+elapsed: "1時間49分",
+},
+past: [
+{
+title: "飯食ってアンティルドーン",
+date: "11月20日",
+duration: "4時間41分",
+watchUrl: "https://www.twitch.tv/videos/2934815632",
+thumbnailUrl:
+"https://static-cdn.jtvnw.net/cf_vods/d3vd9lfkzbru3h/02bb96f9af5e978facb2_kato_junichi0817_316737057009_1795173078//thumb/thumb0-320x180.jpg",
+},
+{
+title: "ROB RUNしてからいろいろやる",
+date: "11月20日",
+duration: "3時間25分",
+watchUrl: "https://www.twitch.tv/videos/2934392915",
+thumbnailUrl:
+"https://static-cdn.jtvnw.net/cf_vods/d3vd9lfkzbru3h/fb0a6dd4ddff585aac84_kato_junichi0817_316735252593_1795135286//thumb/thumb0-320x180.jpg",
+},
+],
+};
+
+var PLAYERS = ROSTER.map(function (r, i) {
+var live = LIVE[r[0]] || null;
+return {
+id: i + 1,
+name: r[0],
+team: r[1],
+leader: r[2] === 1,
+twitchLogin: r[3],
+ytHandle: r[4],
+ytUc: r[5],
+avatarFile: r[6],
+live: live
+? {
+platform: "twitch",
+title: live[0],
+game: live[1],
+viewers: live[2],
+elapsed: live[3],
+watchUrl: "https://www.twitch.tv/" + r[3],
+thumbnailUrl:
+"https://static-cdn.jtvnw.net/previews-ttv/live_user_" +
+r[3] +
+"-440x248.jpg",
+}
+: null,
+};
+});
+var LIVE_PLAYERS = PLAYERS.filter(function (p) { return p.live;});
+LIVE_PLAYERS.sort(function (a, b) { return b.live.viewers - a.live.viewers;});
+var LIVE_TOTAL = LIVE_PLAYERS.length + 1; // + 加藤純一
+
+// ---------- small helpers ----------
+function esc(s) {
+return String(s == null? "": s)
+.replace(/&/g, "&amp;")
+.replace(/</g, "&lt;")
+.replace(/>/g, "&gt;")
+.replace(/"/g, "&quot;");
+}
+function formatViewers(n) {
+return n.toLocaleString("ja-JP") + "人";
+}
+function formatViewersCompact(n) {
+if (n >= 10000) {
+var v = Math.round(n / 1000) / 10;
+return (Number.isInteger(v)? v.toFixed(0): String(v)) + "万";
+}
+return n.toLocaleString("ja-JP");
+}
+var CROWN_PATH =
+'<path d="M3 17.6 1.8 5.4a.6.6 0 0 1 .97-.6l5 3.9L12 3.6l4.23 5.1 5-3.9a.6.6 0 0 1 .97.6L21 17.6a1 1 0 0 1-1 .9H4a1 1 0 0 1-1-.9Z"/><rect x="3.4" y="19.6" width="17.2" height="1.8" rx="0.9"/>';
+function crown(color, size, label) {
+return (
+'<span class="crown" role="img" aria-label="' + esc(label) + '" title="' + esc(label) +
+'" style="color:' + color + '"><svg aria-hidden="true" width="' + size + '" height="' + size +
+'" viewBox="0 0 24 24" fill="currentColor">' + CROWN_PATH + "</svg></span>"
+);
+}
+function leaderMark(teamKey, size) {
+var t = teamOf(teamKey);
+return crown(t? t.dot: "var(--dim)", size || 18, "リーダー");
+}
+function avatarHtml(player, size) {
+if (player.avatarFile) {
+return (
+'<img class="avatar-img" src="assets/avatars/' + esc(player.avatarFile) +
+'" alt="" width="' + size + '" height="' + size + '" style="width:' + size +
+"px;height:" + size + 'px" loading="lazy" />'
+);
+}
+return (
+'<span class="avatar-fallback" aria-hidden="true" style="width:' + size + "px;height:" +
+size + "px;font-size:" + Math.round(size * 0.42) + 'px">' +
+esc(player.name.slice(0, 1)) + "</span>"
+);
+}
+var GAMEPAD_SVG =
+'<svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12h4"/><path d="M8 10v4"/><path d="M15 13h.01"/><path d="M18 11h.01"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59l-.7 7A3 3 0 0 0 5 18.5c.8 0 1.5-.3 2-.8L8.41 16h7.18L17 17.7c.5.5 1.2.8 2 .8a3 3 0 0 0 2.998-2.91l-.7-7A4 4 0 0 0 17.32 5Z"/></svg>';
+function gameTag(game) {
+if (!game) return '<span class="game-spacer" aria-hidden="true"></span>';
+return (
+'<span class="game-tag" title="' + esc(game) + '" aria-label="プレイ中のゲーム: ' +
+esc(game) + '">' + GAMEPAD_SVG + '<span class="gname">' + esc(game) + "</span></span>"
+);
+}
+function platformViewers(platform, viewers) {
+var label = platform === "twitch"? "Twitch": "YouTube";
+var color = platform === "twitch"? "var(--twitch)": "var(--youtube)";
+var html =
+'<span class="platform-viewers" title="同接 ' + esc(formatViewers(viewers)) +
+'"><span style="color:' + color + '">' + label + "</span>";
+if (viewers!= null) {
+html += '<span class="pv-count">' + esc(formatViewersCompact(viewers)) + "</span>";
+}
+return html + "</span>";
+}
+function channelUrl(p) {
+if (p.live) return p.live.watchUrl;
+if (p.twitchLogin) return "https://www.twitch.tv/" + p.twitchLogin;
+if (p.ytUc) return "https://www.youtube.com/channel/" + p.ytUc;
+if (p.ytHandle) return "https://www.youtube.com/@" + encodeURIComponent(p.ytHandle);
+return null;
+}
+
+// ---------- inline players (max 4, FIFO) ----------
+var MAX_INLINE_PLAYERS = 4;
+var openKeys = [];
+var playerHosts = {}; // key -> {el, login, name, watchUrl, restoreHtml}
+function twitchEmbedSrc(login) {
+var parent = "";
+try { parent = window.location.hostname || "";} catch (e) { parent = "";}
+return (
+"https://player.twitch.tv/?channel=" + encodeURIComponent(login) +
+(parent? "&parent=" + encodeURIComponent(parent): "") +
+"&muted=true&autoplay=true"
+);
+}
+function openPlayer(key) {
+var rec = playerHosts[key];
+if (!rec || openKeys.indexOf(key)!== -1) return;
+openKeys.push(key);
+while (openKeys.length > MAX_INLINE_PLAYERS) {
+closePlayer(openKeys[0]);
+}
+renderEmbed(rec);
+}
+function closePlayer(key) {
+var idx = openKeys.indexOf(key);
+if (idx!== -1) openKeys.splice(idx, 1);
+var rec = playerHosts[key];
+if (rec && rec.playing) {
+rec.playing = false;
+if (rec.hintTimer) { window.clearTimeout(rec.hintTimer); rec.hintTimer = null;}
+rec.el.innerHTML = rec.restoreHtml;
+bindThumbButton(rec);
+}
+}
+function renderEmbed(rec) {
+rec.playing = true;
+rec.responded = false;
+var html =
+'<iframe src="' + esc(twitchEmbedSrc(rec.login)) + '" title="' +
+esc(rec.name) + 'の配信プレーヤー（Twitch）" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>' +
+'<button type="button" class="embed-close" data-close="' + esc(rec.key) +
+'" aria-label="' + esc(rec.name) + 'の再生を閉じる"><span aria-hidden="true">✕</span>閉じる</button>' +
+'<div class="embed-hint" data-hint="' + esc(rec.key) + '" hidden>' +
+"<p>再生が始まらない場合は、埋め込みがブロックされている可能性があります</p>" +
+'<div class="hint-btns">' +
+'<a class="hint-open" href="' + esc(rec.watchUrl) + '" target="_blank" rel="noreferrer" aria-label="' +
+esc(rec.name) + 'の配信をTwitchで開く">Twitchで開く</a>' +
+'<button type="button" class="hint-sub" data-reload="' + esc(rec.key) +
+'" aria-label="' + esc(rec.name) + 'のプレーヤーを再読み込み">再読み込み</button>' +
+'<button type="button" class="hint-sub" data-hintclose="' + esc(rec.key) +
+'" aria-label="再生できない場合の案内を閉じる">✕</button>' +
+"</div></div>";
+rec.el.innerHTML = html;
+rec.hintTimer = window.setTimeout(function () {
+if (rec.playing &&!rec.responded) {
+var hint = rec.el.querySelector("[data-hint]");
+if (hint) hint.hidden = false;
+}
+}, 15000);
+}
+window.addEventListener("message", function (e) {
+if (e.origin!== "https://player.twitch.tv") return;
+Object.keys(playerHosts).forEach(function (k) {
+var rec = playerHosts[k];
+if (rec.playing) {
+rec.responded = true;
+var hint = rec.el.querySelector("[data-hint]");
+if (hint) hint.hidden = true;
+}
+});
+});
+function bindThumbButton(rec) {
+var btn = rec.el.querySelector("[data-open]");
+if (btn) {
+btn.addEventListener("click", function () { openPlayer(rec.key);});
+}
+}
+// A live thumbnail that can swap in place for the Twitch embed.
+// The outer div.thumb-box (data-thumb) is the registered host
+// element; its content is either the still button (kept in
+// thumbRestores for restoring) or the embed player.
+var thumbRestores = {};
+function playableThumb(opts) {
+// opts: key, login, name, thumbnailUrl, watchUrl, extraClass, badgesHtml
+var badges = opts.badgesHtml || "";
+var stillBtn =
+'<button type="button" class="thumb-still" data-open="' + esc(opts.key) +
+'" aria-label="' + esc(opts.name) + 'の配信をその場で再生（Twitch）">' +
+'<img class="thumb-img" src="' + esc(opts.thumbnailUrl) + '" alt="' +
+esc(opts.name) + 'の配信サムネイル" loading="lazy" />' + badges +
+'<span class="play-overlay" aria-hidden="true"><span class="play-circle">' +
+'<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg>' +
+"</span></span></button>";
+thumbRestores[opts.key] = stillBtn;
+var markup =
+'<div class="thumb-box ' + (opts.extraClass || "") + '" data-thumb="' +
+esc(opts.key) + '">' + stillBtn + "</div>";
+return { markup: markup };
+}
+function registerThumb(key, login, name, watchUrl, restoreHtml) {
+var el = document.querySelector('[data-thumb="' + key + '"]');
+if (!el) return;
+// The registered element is the outer box; for cards the button
+// itself is the box, for the host the box wraps the button.
+var rec = {
+key: key, el: el, login: login, name: name, watchUrl: watchUrl,
+restoreHtml: restoreHtml, playing: false, responded: false, hintTimer: null,
+};
+playerHosts[key] = rec;
+bindThumbButton(rec);
+}
+
+      // ---------- link frames ----------
+      function linkFrame(o) {
+        var desc = o.descriptionFull
+          ? '<span class="link-desc full">' + esc(o.description) + "</span>"
+          : '<span class="link-desc">' + esc(o.description) + "</span>";
+        var note = o.descriptionNote
+          ? '<span class="link-desc full">' + esc(o.descriptionNote) + "</span>"
+          : "";
+        return (
+          '<a class="link-frame" href="' + esc(o.href) + '" target="_blank" rel="noreferrer" aria-label="' +
+          esc(o.ariaLabel) + '"><span class="link-chip" style="' + o.chipStyle + '">' + esc(o.chip) +
+          '</span><span class="link-text"><span class="link-name">' + esc(o.name) +
+          (o.nameNote ? '<span class="note"> ' + esc(o.nameNote) + "</span>" : "") +
+          "</span>" + desc + note +
+          '</span><span class="link-arrow" aria-hidden="true">→</span></a>'
+        );
+      }
+      var CHIP_OFFICIAL = "background:var(--text);color:var(--bg)";
+      var CHIP_SCHEDULE = "background:var(--schedule-accent);color:#12141c";
+
+      // ---------- host card （加藤純一） ----------
+      function pastBroadcasts(host, layout) {
+        if (!host.past || host.past.length === 0) return "";
+        var items = host.past.map(function (v) {
+          var meta = [v.date, v.duration].filter(Boolean).join(" ・ ");
+          return (
+            '<li><a class="past-item" href="' + esc(v.watchUrl) +
+            '" target="_blank" rel="noreferrer" aria-label="' + esc(host.name) +
+            "の過去配信「" + esc(v.title) + '」を見る（Twitch）">' +
+            '<span class="past-thumb">' +
+            (v.thumbnailUrl ? '<img src="' + esc(v.thumbnailUrl) + '" alt="" loading="lazy" />' : "") +
+            '</span><span class="past-texts"><span class="past-title" title="' + esc(v.title) + '">' +
+            esc(v.title) + '</span>' +
+            (meta ? '<span class="past-meta">' + esc(meta) + "</span>" : "") +
+            "</span></a></li>"
+          );
+        }).join("");
+        return (
+          '<div><p class="past-head">過去の配信</p><ul class="' +
+          (layout === "grid" ? "past-grid" : "past-list") + '">' + items + "</ul></div>"
+        );
+      }
+      function hostCardHtml() {
+        var host = HOST;
+        var live = host.live;
+        var watchUrl = "https://www.twitch.tv/" + host.twitchLogin;
+        var thumbUrl =
+          "https://static-cdn.jtvnw.net/previews-ttv/live_user_" + host.twitchLogin + "-440x248.jpg";
+        var badges =
+          '<span class="host-viewers-pill">' + esc(formatViewers(live.viewers)) + "</span>";
+        var thumb = playableThumb({
+          key: "host-1", login: host.twitchLogin, name: host.name,
+          thumbnailUrl: thumbUrl, watchUrl: watchUrl,
+          extraClass: "host-thumb", badgesHtml: badges,
+        });
+        var detail =
+          '<div class="host-detail-live">' +
+          thumb.markup +
+          '<div class="host-info">' +
+          '<span class="host-mrhyg">Mr.HYG（ミスターハイゲ）' +
+          crown(REVENGERS_TEAM.dot, 14, "Mr.HYG") + "</span>" +
+          '<a class="host-detail-title" href="' + esc(watchUrl) + '" target="_blank" rel="noreferrer" title="' +
+          esc(live.title) + '" aria-label="' + esc(host.name) + 'の配信を見る（Twitch）">' +
+          esc(live.title) + "</a>" +
+          '<span class="host-game-row">' + gameTag(live.game) + "</span>" +
+          '<div style="margin-top:12px">' + pastBroadcasts(host, "list") + "</div>" +
+          '<div class="host-meta-row"><span class="host-meta">' +
+          esc("同接 " + formatViewers(live.viewers) + " ・ 配信開始から" + live.elapsed) +
+          '</span><span class="host-meta-right"><span class="twitch-chip">Twitch</span>' +
+          '<a class="watch-btn" href="' + esc(watchUrl) + '" target="_blank" rel="noreferrer" aria-label="' +
+          esc(host.name) + 'の配信を見る（Twitch）">配信を見る <span aria-hidden="true">→</span></a>' +
+          "</span></div></div></div>";
+        return (
+          '<div class="host-card"><div class="host-head">' +
+          '<a class="avatar-link host-avatar-link" href="' + esc(watchUrl) +
+          '" target="_blank" rel="noreferrer" aria-label="' + esc(host.name) +
+          'の配信を見る（Twitch）" title="配信を見る">' +
+          avatarHtml({ name: host.name, avatarFile: host.avatarFile }, 40) + "</a>" +
+          '<button type="button" class="host-toggle" id="hostToggle" aria-expanded="false" aria-label="' +
+          esc(host.name) + 'の配信詳細を開く">' +
+          '<span class="host-name">' + esc(host.name) + "</span>" +
+          crown(REVENGERS_TEAM.dot, 20, "Mr.HYG") +
+          '<span class="host-live-group"><span class="gt-wrap">' + gameTag(live.game) + "</span>" +
+          '<span class="host-sep" aria-hidden="true">｜</span>' +
+          '<span class="host-stream-title" title="' + esc(live.title) + '">' + esc(live.title) + "</span></span>" +
+          '<span class="host-viewers">同接 ' + esc(formatViewers(live.viewers)) + "</span>" +
+          '<span class="host-live-badge"><span class="live-dot"></span>LIVE</span>' +
+          '<span class="chev" id="hostChev" aria-hidden="true">▾</span>' +
+          "</button></div>" +
+          '<div id="hostDetail" hidden>' + detail + "</div></div>"
+        );
+      }
+
+      // ---------- live cards ----------
+      function liveCardHtml(p) {
+        var team = teamOf(p.team);
+        var live = p.live;
+        var badges =
+          '<span class="live-badge"><span class="live-dot"></span>LIVE</span>' +
+          '<span class="elapsed-pill" title="配信開始からの経過時間">' + esc(live.elapsed) + "</span>";
+        var thumb = playableThumb({
+          key: "player-" + p.id, login: p.twitchLogin, name: p.name,
+          thumbnailUrl: live.thumbnailUrl, watchUrl: live.watchUrl, badgesHtml: badges,
+        });
+        return (
+          '<div class="live-card" style="border:2px solid ' + (team ? team.dot : "var(--border)") + '">' +
+          thumb.markup +
+          '<div class="live-card-body"><div class="card-name-row">' +
+          avatarHtml(p, 32) +
+          '<span class="card-name">' + esc(p.name) + "</span>" +
+          (p.leader ? leaderMark(p.team, 20) : "") +
+          "</div>" +
+          '<a class="card-title" href="' + esc(live.watchUrl) + '" target="_blank" rel="noreferrer" title="' +
+          esc(live.title) + '" aria-label="' + esc(p.name) + 'の配信を見る（Twitch）">' +
+          esc(live.title) + "</a>" +
+          '<div class="game-row"><span class="grow">' + gameTag(live.game) + "</span>" +
+          platformViewers("twitch", live.viewers) +
+          "</div></div></div>"
+        );
+      }
+
+      // ---------- roster rows ----------
+      function playerRowHtml(p) {
+        var live = p.live;
+        var offline = !live;
+        var href = channelUrl(p);
+        var dimStyle = offline
+          ? ' style="opacity:0.5;filter:saturate(0.55) brightness(0.85)"'
+          : "";
+        var avatar = href
+          ? '<a class="avatar-link" href="' + esc(href) + '" target="_blank" rel="noreferrer" aria-label="' +
+            esc(live ? p.name + "の配信を見る（Twitch）" : p.name + "のチャンネルを開く") +
+            '" title="' + (live ? "配信を見る" : "チャンネルを開く") + '"' + dimStyle + ">" +
+            avatarHtml(p, 40) + "</a>"
+          : '<span class="avatar-link" aria-hidden="true"' + dimStyle + ">" + avatarHtml(p, 40) + "</span>";
+        var title = live
+          ? '<p class="prow-title" style="color:var(--text)" title="' + esc(live.title) + '">' + esc(live.title) + "</p>"
+          : '<p class="prow-title" style="color:var(--dim)">オフライン</p>';
+        var gameRow =
+          '<div class="game-row"><span class="grow">' +
+          gameTag(live ? live.game : null) + "</span>" +
+          (live
+            ? platformViewers("twitch", live.viewers)
+            : "") +
+          "</div>";
+        return (
+          '<li class="prow"><div class="prow-inner"><div class="prow-top">' + avatar +
+          '<div class="prow-main"><p class="prow-name" style="color:' +
+          (offline ? "var(--dim)" : "var(--text)") + '"><span class="pname">' + esc(p.name) + "</span>" +
+          (p.leader
+            ? '<span style="display:inline-flex' + (offline ? ";opacity:0.55" : "") + '">' +
+              leaderMark(p.team, 18) + "</span>"
+            : "") +
+          "</p>" + title + "</div></div>" + gameRow + "</div></li>"
+        );
+      }
+
+      // ---------- stepped frame (SVG outline measured from columns) ----------
+      function roundedLoopPath(pts, radius) {
+        var n = pts.length;
+        var v = [];
+        for (var k = 0; k < n; k++) {
+          var prev = pts[(k + n - 1) % n], cur = pts[k], next = pts[(k + 1) % n];
+          var cross = (cur[0] - prev[0]) * (next[1] - cur[1]) - (cur[1] - prev[1]) * (next[0] - cur[0]);
+          if (cross !== 0) v.push(cur);
+        }
+        var m = v.length;
+        if (m < 2) return "";
+        var a = [], b = [], rs = [], sw = [];
+        for (var k2 = 0; k2 < m; k2++) {
+          var p0 = v[(k2 + m - 1) % m], c0 = v[k2], n0 = v[(k2 + 1) % m];
+          var d1x = Math.sign(c0[0] - p0[0]), d1y = Math.sign(c0[1] - p0[1]);
+          var d2x = Math.sign(n0[0] - c0[0]), d2y = Math.sign(n0[1] - c0[1]);
+          var len1 = Math.abs(c0[0] - p0[0]) + Math.abs(c0[1] - p0[1]);
+          var len2 = Math.abs(n0[0] - c0[0]) + Math.abs(n0[1] - c0[1]);
+          var r = Math.min(radius, len1 / 2, len2 / 2);
+          a.push([c0[0] - d1x * r, c0[1] - d1y * r]);
+          b.push([c0[0] + d2x * r, c0[1] + d2y * r]);
+          rs.push(r);
+          sw.push(d1x * d2y - d1y * d2x > 0 ? 1 : 0);
+        }
+        var d = "M " + b[m - 1][0] + " " + b[m - 1][1];
+        for (var k3 = 0; k3 < m; k3++) {
+          d += " L " + a[k3][0] + " " + a[k3][1] + " A " + rs[k3] + " " + rs[k3] + " 0 0 " + sw[k3] + " " + b[k3][0] + " " + b[k3][1];
+        }
+        return d + " Z";
+      }
+      function steppedFramePaths(rects, radius) {
+        var xsSet = {}, ysSet = {};
+        rects.forEach(function (r) { xsSet[r.x] = 1; xsSet[r.x + r.w] = 1; ysSet[r.y] = 1; ysSet[r.y + r.h] = 1; });
+        var xs = Object.keys(xsSet).map(Number).sort(function (p, q) { return p - q; });
+        var ys = Object.keys(ysSet).map(Number).sort(function (p, q) { return p - q; });
+        var nx = xs.length - 1, ny = ys.length - 1;
+        if (nx < 1 || ny < 1) return { outline: "", dividers: "" };
+        var covered = [];
+        for (var j = 0; j < ny; j++) {
+          var row = [];
+          for (var i = 0; i < nx; i++) {
+            var cx = (xs[i] + xs[i + 1]) / 2, cy = (ys[j] + ys[j + 1]) / 2;
+            row.push(rects.some(function (r) { return cx > r.x && cx < r.x + r.w && cy > r.y && cy < r.y + r.h; }));
+          }
+          covered.push(row);
+        }
+        function cov(i2, j2) { return i2 >= 0 && i2 < nx && j2 >= 0 && j2 < ny && covered[j2][i2]; }
+        var nexts = {};
+        function addSeg(ax, ay, bx, by) {
+          var k = ax + "," + ay;
+          if (nexts[k]) nexts[k].push([bx, by]); else nexts[k] = [[bx, by]];
+        }
+        var vSegs = {}, hSegs = {};
+        function addTo(map, at, from, to) {
+          if (map[at]) map[at].push([from, to]); else map[at] = [[from, to]];
+        }
+        for (var jj = 0; jj < ny; jj++) {
+          for (var ii = 0; ii < nx; ii++) {
+            if (!cov(ii, jj)) continue;
+            var x0 = xs[ii], x1 = xs[ii + 1], y0 = ys[jj], y1 = ys[jj + 1];
+            if (!cov(ii, jj - 1)) addSeg(x0, y0, x1, y0);
+            if (!cov(ii, jj + 1)) addSeg(x1, y1, x0, y1);
+            if (!cov(ii - 1, jj)) addSeg(x0, y1, x0, y0);
+            if (!cov(ii + 1, jj)) addSeg(x1, y0, x1, y1);
+            if (cov(ii + 1, jj)) addTo(vSegs, x1, y0, y1);
+            if (cov(ii, jj + 1)) addTo(hSegs, y1, x0, x1);
+          }
+        }
+        var loops = [];
+        while (Object.keys(nexts).length > 0) {
+          var firstKey = Object.keys(nexts)[0];
+          var parts = firstKey.split(",").map(Number);
+          var sx = parts[0], sy = parts[1];
+          var loop = [[sx, sy]];
+          var cx2 = sx, cy2 = sy;
+          for (;;) {
+            var arr = nexts[cx2 + "," + cy2];
+            if (!arr || arr.length === 0) break;
+            var nxt = arr.pop();
+            if (arr.length === 0) delete nexts[cx2 + "," + cy2];
+            cx2 = nxt[0]; cy2 = nxt[1];
+            if (cx2 === sx && cy2 === sy) break;
+            loop.push([cx2, cy2]);
+          }
+          if (loop.length >= 4) loops.push(loop);
+        }
+        var outline = loops.map(function (l) { return roundedLoopPath(l, radius); }).join(" ");
+        function mergeRuns(map, vertical) {
+          var d = "";
+          Object.keys(map).forEach(function (atKey) {
+            var at = Number(atKey);
+            var segs = map[atKey].slice().sort(function (p, q) { return p[0] - q[0]; });
+            var start = segs[0] && segs[0][0], end = segs[0] && segs[0][1];
+            function flush() {
+              if (start === undefined || end === undefined) return;
+              d += vertical ? "M " + at + " " + start + " L " + at + " " + end + " " : "M " + start + " " + at + " L " + end + " " + at + " ";
+            }
+            for (var s = 1; s < segs.length; s++) {
+              var f = segs[s][0], t = segs[s][1];
+              if (end !== undefined && f <= end) { if (t > end) end = t; }
+              else { flush(); start = f; end = t; }
+            }
+            flush();
+          });
+          return d;
+        }
+        return { outline: outline, dividers: mergeRuns(vSegs, true) + mergeRuns(hSegs, false) };
+      }
+      var steppedContainers = [];
+      function measureStepped(container) {
+        var cols = container.querySelectorAll("ul[data-col]");
+        if (cols.length === 0) return;
+        var base = container.getBoundingClientRect();
+        var rects = [];
+        for (var i = 0; i < cols.length; i++) {
+          var r = cols[i].getBoundingClientRect();
+          rects.push({
+            x: Math.round(r.left - base.left), y: Math.round(r.top - base.top),
+            w: Math.round(r.width), h: Math.round(r.height),
+          });
+        }
+        var paths = steppedFramePaths(rects, 14);
+        var w = Math.round(base.width), h = Math.round(base.height);
+        var svg = container.querySelector("svg.frame");
+        if (!svg) {
+          svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+          svg.setAttribute("class", "frame");
+          svg.setAttribute("aria-hidden", "true");
+          container.insertBefore(svg, container.firstChild);
+        }
+        var color = container.getAttribute("data-color") || "var(--border)";
+        svg.setAttribute("width", w);
+        svg.setAttribute("height", h);
+        svg.setAttribute("viewBox", "0 0 " + w + " " + h);
+        svg.innerHTML =
+          '<path d="' + paths.outline + '" fill="var(--surface)" stroke="' + color + '" stroke-width="2"/>' +
+          '<path d="' + paths.dividers + '" fill="none" stroke="var(--border)" stroke-width="2"/>';
+      }
+      function initStepped() {
+        steppedContainers = Array.prototype.slice.call(document.querySelectorAll(".stepped"));
+        steppedContainers.forEach(measureStepped);
+        if (window.ResizeObserver) {
+          steppedContainers.forEach(function (c) {
+            if (c.__roObserved) return;
+            c.__roObserved = true;
+            var ro = new ResizeObserver(function () { measureStepped(c); });
+            ro.observe(c);
+            Array.prototype.forEach.call(c.querySelectorAll("ul[data-col]"), function (ul) {
+              ro.observe(ul);
+            });
+          });
+        }
+      }
+      window.addEventListener("load", function () {
+        steppedContainers.forEach(measureStepped);
+      });
+      var resizeTimer = null;
+      window.addEventListener("resize", function () {
+        if (resizeTimer) window.clearTimeout(resizeTimer);
+        resizeTimer = window.setTimeout(function () {
+          steppedContainers.forEach(measureStepped);
+        }, 120);
+      });
+
+      function chunkMembers(members, columns) {
+        var count = Math.min(columns, members.length);
+        var base = Math.floor(members.length / count);
+        var rem = members.length % count;
+        var chunks = [], idx = 0;
+        for (var c = 0; c < count; c++) {
+          var size = base + (c < rem ? 1 : 0);
+          chunks.push(members.slice(idx, idx + size));
+          idx += size;
+        }
+        return chunks;
+      }
+      function teamBlockHtml(team, members, columns) {
+        var liveCount = members.filter(function (p) { return p.live; }).length;
+        var head =
+          '<h2 class="team-head"><span class="team-dot" aria-hidden="true" style="background:' +
+          team.dot + '"></span><span class="team-label">' + esc(team.label) +
+          '</span><span class="team-count">' + members.length + "人" +
+          (liveCount > 0 ? '<span class="live-n"> ・ ' + liveCount + "人配信中</span>" : "") +
+          "</span></h2>";
+        var body;
+        if (columns && columns > 1 && members.length > 1) {
+          var chunks = chunkMembers(members, columns);
+          body =
+            '<div class="stepped" data-color="' + team.dot + '">' +
+            chunks.map(function (chunk) {
+              return "<ul data-col>" + chunk.map(playerRowHtml).join("") + "</ul>";
+            }).join("") + "</div>";
+        } else {
+          body =
+            '<ul class="roster-list" style="border:2px solid ' + team.dot + '">' +
+            members.map(playerRowHtml).join("") + "</ul>";
+        }
+        return "<div>" + head + body + "</div>";
+      }
+
+      // ---------- live page assembly ----------
+      var currentFilter = "all";
+      function officialSectionHtml() {
+        return (
+          '<section class="official" aria-label="公式配信">' +
+          '<button type="button" class="official-toggle" id="officialToggle" aria-expanded="false" aria-label="本配信・公式リンクを開く">' +
+          '<span>本配信・公式リンク</span><span class="chev" id="officialChev" aria-hidden="true">▾</span></button>' +
+          '<div id="officialBody" hidden><div class="official-body">' +
+          '<div><h2 class="main-broadcast-head"><span class="live-dot" style="height:10px;width:10px"></span>本配信（無料）</h2>' +
+          '<div class="frames-2">' +
+          linkFrame({
+            href: "https://www.youtube.com/@mellow-fan_official",
+            ariaLabel: "YouTube mellow-fanチャンネルで本配信を見る",
+            chip: "YouTube",
+            chipStyle: "background:var(--youtube);color:#fff",
+            name: "mellow-fan",
+            description: "本配信（完全版）はこちら",
+          }) +
+          linkFrame({
+            href: "https://www.twitch.tv/kato_junichi0817",
+            ariaLabel: "Twitch 加藤純一チャンネルで本配信を見る",
+            chip: "Twitch",
+            chipStyle: "background:var(--twitch);color:#fff",
+            name: "加藤純一",
+            description: "本配信はこちら",
+          }) +
+          "</div>" +
+          '<p class="official-note text-pretty">一部のゲームは権利の都合でTwitchでは映像が出ない時間があります。完全版はYouTubeをご覧ください</p>' +
+          "</div>" +
+          '<div class="frames-3">' +
+          linkFrame({
+            href: "https://lp.openrec.jp/hyper-game-event-final/",
+            ariaLabel: "ハイゲFINAL公式サイトを開く",
+            chip: "公式サイト",
+            chipStyle: CHIP_OFFICIAL,
+            name: "公式サイト",
+            description: "イベントの詳細・チケット情報はこちら",
+          }) +
+          linkFrame({
+            href: "https://x.com/hypergameinfo",
+            ariaLabel: "ハイゲFINAL公式X（旧Twitter）を開く",
+            chip: "公式X",
+            chipStyle: CHIP_OFFICIAL,
+            name: "公式X",
+            description: "最新情報はこちら（@hypergameinfo）",
+          }) +
+          linkFrame({
+            href: "https://www.mellow-fan.com/ppv/hyper-game-event3",
+            ariaLabel: "mellow-fanのPPVページを開く",
+            chip: "PPV",
+            chipStyle: CHIP_OFFICIAL,
+            name: "mellow-fan PPV",
+            nameNote: "（有料）",
+            description: "マルチアングル／ROAD TO HYPER",
+            descriptionFull: true,
+            descriptionNote: "※アーカイブは2027/4/2まで",
+          }) +
+          "</div></div></div></section>"
+        );
+      }
+      function renderLivePage() {
+        var el = document.getElementById("livePage");
+        var chips = [{ key: "all", label: "すべて" }].concat(
+          TEAMS.map(function (t) { return { key: t.key, label: t.label }; })
+        );
+        el.innerHTML =
+          '<section class="hero"><div class="hero-row">' +
+          '<p class="hero-count">現在配信中：<span>' + LIVE_TOTAL + "人</span></p>" +
+          '<p class="hero-meta">全55人 ・ 最終確認 11月21日 2:55</p>' +
+          "</div></section>" +
+          officialSectionHtml() +
+          hostCardHtml() +
+          '<section class="filters"><div class="filter-row" role="group" aria-label="チームで絞り込み">' +
+          chips.map(function (c) {
+            return (
+              '<button type="button" class="filter-chip" data-filter="' + esc(c.key) +
+              '" aria-pressed="' + (currentFilter === c.key ? "true" : "false") + '">' +
+              esc(c.label) + "</button>"
+            );
+          }).join("") +
+          "</div></section>" +
+          '<div id="liveSection"></div><div id="rosterSection"></div>' +
+          '<footer class="page-footer"><p class="text-pretty">配信状況は Twitch と YouTube の公開情報を確認した2026年11月21日2:55時点の表示です（両方で配信中の場合は Twitch を優先表示）。</p></footer>';
+        // official fold
+        var ot = document.getElementById("officialToggle");
+        ot.addEventListener("click", function () {
+          var body = document.getElementById("officialBody");
+          var open = body.hidden;
+          body.hidden = !open;
+          ot.setAttribute("aria-expanded", String(open));
+          ot.setAttribute("aria-label", "本配信・公式リンクを" + (open ? "閉じる" : "開く"));
+          document.getElementById("officialChev").className = "chev" + (open ? " open" : "");
+        });
+        // host fold
+        var ht = document.getElementById("hostToggle");
+        ht.addEventListener("click", function () {
+          var body = document.getElementById("hostDetail");
+          var open = body.hidden;
+          body.hidden = !open;
+          ht.setAttribute("aria-expanded", String(open));
+          ht.setAttribute("aria-label", HOST.name + "の配信詳細を" + (open ? "閉じる" : "開く"));
+          document.getElementById("hostChev").className = "chev" + (open ? " open" : "");
+          if (open) registerHostThumb();
+        });
+        // filters
+        Array.prototype.forEach.call(el.querySelectorAll("[data-filter]"), function (btn) {
+          btn.addEventListener("click", function () {
+            setFilter(btn.getAttribute("data-filter"));
+          });
+        });
+        renderFilterBody();
+      }
+      function registerHostThumb() {
+        if (playerHosts["host-1"]) return;
+        registerThumb("host-1", HOST.twitchLogin, HOST.name,
+          "https://www.twitch.tv/" + HOST.twitchLogin, thumbRestores["host-1"]);
+      }
+      function setFilter(key) {
+        // Close any open inline players before the DOM is replaced.
+        openKeys.slice().forEach(function (k) {
+          var idx = openKeys.indexOf(k);
+          if (idx !== -1) openKeys.splice(idx, 1);
+          var rec = playerHosts[k];
+          if (rec) { rec.playing = false; if (rec.hintTimer) window.clearTimeout(rec.hintTimer); }
+          delete playerHosts[k];
+        });
+        currentFilter = key;
+        Array.prototype.forEach.call(document.querySelectorAll("[data-filter]"), function (btn) {
+          btn.setAttribute("aria-pressed", String(btn.getAttribute("data-filter") === key));
+        });
+        renderFilterBody();
+      }
+      function renderFilterBody() {
+        var liveEl = document.getElementById("liveSection");
+        var rosterEl = document.getElementById("rosterSection");
+        // Register card thumbnails after (re)render.
+        function registerCards(players) {
+          players.forEach(function (p) {
+            registerThumb("player-" + p.id, p.twitchLogin, p.name, p.live.watchUrl,
+              thumbRestores["player-" + p.id]);
+          });
+        }
+        if (currentFilter === "all") {
+          liveEl.innerHTML = "";
+          var html = '<section class="roster" aria-label="選手一覧"><div class="all-grid">';
+          MAIN_TEAMS.forEach(function (team) {
+            var members = PLAYERS.filter(function (p) { return p.team === team.key; });
+            if (members.length) html += teamBlockHtml(team, members, 0);
+          });
+          html += "</div>";
+          var rev = PLAYERS.filter(function (p) { return p.team === REVENGERS_TEAM.key; });
+          if (rev.length) {
+            html += '<div class="revengers-wrap">' + teamBlockHtml(REVENGERS_TEAM, rev, 4) + "</div>";
+          }
+          html += "</section>";
+          rosterEl.innerHTML = html;
+        } else {
+          var team = teamOf(currentFilter);
+          var teamLive = LIVE_PLAYERS.filter(function (p) { return p.team === currentFilter; });
+          var liveHtml = '<section class="live-section" aria-label="配信中の選手">';
+          if (teamLive.length > 0) {
+            liveHtml += '<div class="live-grid">' + teamLive.map(liveCardHtml).join("") + "</div>";
+          } else {
+            liveHtml +=
+              '<p class="no-live" style="border:2px solid ' + team.dot + '">' +
+              esc(team.label) + "でいま配信中の選手はいません</p>";
+          }
+          liveHtml += "</section>";
+          liveEl.innerHTML = liveHtml;
+          registerCards(teamLive);
+          var members = PLAYERS.filter(function (p) { return p.team === currentFilter; });
+          rosterEl.innerHTML =
+            '<section class="roster" aria-label="選手一覧">' +
+            teamBlockHtml(team, members, 4) + "</section>";
+        }
+        initStepped();
+      }
+
+      // ---------- schedule page ----------
+      var AXIS_START = 9 * 60, AXIS_END = 22 * 60, HOUR_PX = 52;
+      function fmtMin(min) {
+        return Math.floor(min / 60) + ":" + String(min % 60).padStart(2, "0");
+      }
+      var DAYS = [
+        {
+          label: "DAY1", date: "2026年11月28日(土) ・ 東京ドーム",
+          blocks: [
+            { name: "物販", sub: "9:00〜17:30（在庫限り）※22G常設テント", start: 9 * 60, end: 17 * 60 + 30, variant: "normal" },
+            { name: "開場", sub: "12:30〜14:30", start: 12 * 60 + 30, end: 14 * 60 + 30, variant: "normal" },
+            { name: "ハイパーゲーム大会", sub: "開演 14:30 〜 終演予定 21:00", start: 14 * 60 + 30, end: 21 * 60, variant: "main" },
+          ],
+          undated: [{ name: "裏ハイゲ（配信）", sub: "DAY1深夜に配信予定（時間は未定）" }],
+        },
+        {
+          label: "DAY2", date: "2026年11月29日(日) ・ 東京ドーム",
+          blocks: [
+            { name: "物販", sub: "9:00〜16:00（在庫限り）※22G常設テント", start: 9 * 60, end: 16 * 60, variant: "normal" },
+            { name: "開場", sub: "11:00〜13:00", start: 11 * 60, end: 13 * 60, variant: "normal" },
+            { name: "ハイパーゲーム大会", sub: "開演 13:00 〜 終演予定 19:30", start: 13 * 60, end: 19 * 60 + 30, variant: "main" },
+          ],
+          undated: [],
+        },
+      ];
+      function dayTimelineHtml(day) {
+        var span = AXIS_END - AXIS_START;
+        var heightPx = (span / 60) * HOUR_PX;
+        function pct(min) { return ((min - AXIS_START) / span) * 100; }
+        var ticks = [];
+        for (var t = AXIS_START; t <= AXIS_END; t += 60) ticks.push(t);
+        function effEnd(b) { return b.end > b.start ? b.end : b.start + 90; }
+        var sorted = day.blocks.slice().sort(function (a, b) { return a.start - b.start; });
+        var colEnds = [];
+        var assigned = sorted.map(function (b) {
+          var col = -1;
+          for (var i = 0; i < colEnds.length; i++) if (colEnds[i] <= b.start) { col = i; break; }
+          if (col === -1) { col = colEnds.length; colEnds.push(effEnd(b)); }
+          else colEnds[col] = effEnd(b);
+          return { b: b, col: col };
+        });
+        var placed = [];
+        var clusterFrom = 0, clusterMaxEnd = -Infinity, clusterMaxCol = 0;
+        function flush(to) {
+          for (var i = clusterFrom; i < to; i++) {
+            placed.push({ b: assigned[i].b, col: assigned[i].col, cols: clusterMaxCol + 1 });
+          }
+        }
+        assigned.forEach(function (item, i) {
+          if (i > clusterFrom && item.b.start >= clusterMaxEnd) {
+            flush(i); clusterFrom = i; clusterMaxEnd = -Infinity; clusterMaxCol = 0;
+          }
+          clusterMaxEnd = Math.max(clusterMaxEnd, effEnd(item.b));
+          clusterMaxCol = Math.max(clusterMaxCol, item.col);
+        });
+        flush(assigned.length);
+        var gutter = ticks.map(function (t, i) {
+          var transform = i === 0 ? "none" : i === ticks.length - 1 ? "translateY(-100%)" : "translateY(-50%)";
+          return '<span style="top:' + pct(t) + "%;transform:" + transform + '">' + fmtMin(t) + "</span>";
+        }).join("");
+        var grid = ticks.map(function (t) {
+          return '<span style="top:' + pct(t) + '%"></span>';
+        }).join("") + '<span style="top:100%"></span>';
+        var blocks = placed.map(function (pl) {
+          var b = pl.b;
+          var subHtml;
+          if (b.sub.indexOf("※") !== -1) {
+            var parts = b.sub.split("※");
+            subHtml =
+              '<span class="tblock-sub">' + esc(parts[0]) + '</span>' +
+              '<span class="tblock-note">※' + esc(parts[1]) + "</span>";
+          } else {
+            subHtml = '<span class="tblock-sub text-pretty">' + esc(b.sub) + "</span>";
+          }
+          return (
+            '<div class="tblock" style="top:' + pct(b.start) + "%;left:" +
+            (pl.col * 100) / pl.cols + "%;width:" + 100 / pl.cols + "%;height:" +
+            (pct(b.end) - pct(b.start)) + '%" title="' + esc(b.name + " " + b.sub) + '">' +
+            '<div class="tblock-inner' + (b.variant === "main" ? " main" : "") + '">' +
+            '<span class="tblock-name">' + esc(b.name) + "</span>" + subHtml +
+            (b.variant === "main"
+              ? '<span class="tblock-end">終演予定 ' + fmtMin(b.end) + "</span>"
+              : "") +
+            "</div></div>"
+          );
+        }).join("");
+        var undated = "";
+        if (day.undated && day.undated.length) {
+          undated =
+            '<div class="undated">' +
+            day.undated.map(function (u) {
+              return '<p><span class="u-name">' + esc(u.name) + "</span> ・ " + esc(u.sub) + "</p>";
+            }).join("") + "</div>";
+        }
+        return (
+          '<section class="day-card" aria-label="' + esc(day.label) + 'のタイムライン">' +
+          '<div class="day-band"><span class="day-label">' + esc(day.label) +
+          '</span><span class="day-date">' + esc(day.date) + "</span></div>" +
+          '<div class="day-body"><div class="chart">' +
+          '<div class="gutter" style="height:' + heightPx + 'px">' + gutter + "</div>" +
+          '<div class="track" style="height:' + heightPx + 'px">' +
+          '<div class="gridlines" aria-hidden="true">' + grid + "</div>" +
+          '<span class="axis-line" aria-hidden="true"></span>' + blocks +
+          "</div></div>" + undated + "</div></section>"
+        );
+      }
+      var NOTE_SOURCES = {
+        faq: { color: "#C7A64B", label: "ハイゲFINAL公式サイトのFAQ" },
+        dome: { color: "#52749E", label: "東京ドーム公式サイト「イベント来場時のお願い」" },
+      };
+      var NOTES = [
+        { title: "お支払い（キャッシュレス）", points: [
+          { text: "場内とフードは完全キャッシュレス（現金不可）", src: "dome" },
+          { text: "カード・電子マネー・コード決済対応", src: "dome" },
+          { text: "グッズ（物販）は現金もOK", src: "faq" },
+        ]},
+        { title: "持ち込み禁止物", points: [
+          { text: "ビン・缶・ペットボトル類（凍らせたもの・1,000ml超）とアルコール類は不可", src: "dome" },
+          { text: "危険物、ペット（補助犬除く）も不可", src: "dome" },
+        ]},
+        { title: "喫煙", points: [
+          { text: "ドーム内は全面禁煙、喫煙所なし", src: "dome" },
+          { text: "所定喫煙所はシティ内6か所", src: "dome" },
+          { text: "利用には再入場手続きが必要", src: "dome" },
+        ]},
+        { title: "コインロッカー", points: [
+          { text: "場内に設置、数に限りあり", src: "dome" },
+          { text: "料金は公式案内に記載なし", src: "dome" },
+        ]},
+        { title: "ベビーカー", points: [
+          { text: "客席への持ち込み・使用は不可", src: "dome" },
+          { text: "預かりは入場ゲート", src: "dome" },
+        ]},
+        { title: "Wi-Fi", points: [
+          { text: "ドームシティで無料Wi-Fi「.FREE_TokyoDomeCity」が使えます", src: "dome" },
+        ]},
+        { title: "退場時", points: [
+          { text: "分散退場への協力と、周辺駅の利用が呼びかけられています",
+            parts: ["分散退場への協力と、", "周辺駅の利用が呼びかけられています"], src: "dome" },
+        ]},
+        { title: "案内・落とし物", points: [
+          { text: "インフォメーション：22ゲート前（10:00〜18:00）", src: "dome" },
+          { text: "落とし物センター：21ゲート前（11:00〜19:00）", src: "dome" },
+        ]},
+      ];
+      var STATIONS = [
+        { name: "水道橋駅", lines: [
+          { label: "JR中央・総武線", color: "#C7A64B", ink: "#12141c" },
+          { label: "都営三田線", color: "#52749E", ink: "#ffffff" },
+        ], exit: "JR東口・西口／三田線A2出口" },
+        { name: "後楽園駅", lines: [
+          { label: "東京メトロ丸ノ内線", color: "#A85F57", ink: "#ffffff" },
+          { label: "東京メトロ南北線", color: "#5FA294", ink: "#12141c" },
+        ], exit: "2番出口" },
+        { name: "春日駅", lines: [
+          { label: "都営大江戸線", color: "#9E6385", ink: "#ffffff" },
+        ], exit: "6番出口" },
+      ];
+      function schedHeading(text) {
+        return '<h2 class="sched-heading"><span class="sched-bar" aria-hidden="true"></span>' + esc(text) + "</h2>";
+      }
+      function renderSchedulePage() {
+        var el = document.getElementById("schedulePage");
+        var legend = Object.keys(NOTE_SOURCES).map(function (key) {
+          var s = NOTE_SOURCES[key];
+          return (
+            '<li><span class="dot" aria-hidden="true" style="background:' + s.color +
+            '"></span><span class="text-pretty">' + esc(s.label) + "</span></li>"
+          );
+        }).join("");
+        var notes = NOTES.map(function (pt) {
+          var points = pt.points.map(function (point) {
+            var body = point.parts
+              ? point.parts.map(function (part) {
+                  return '<span class="note-part">' + esc(part) + "</span>";
+                }).join("")
+              : esc(point.text);
+            return (
+              '<li><span class="note-dot" aria-hidden="true" style="background:' +
+              NOTE_SOURCES[point.src].color + '"></span><span class="text-pretty">' + body +
+              '<span class="sr-only">（出典：' + esc(NOTE_SOURCES[point.src].label) +
+              "）</span></span></li>"
+            );
+          }).join("");
+          return (
+            '<div class="note-card"><p class="note-title">' + esc(pt.title) +
+            '</p><ul class="note-points">' + points + "</ul></div>"
+          );
+        }).join("");
+        var stations = STATIONS.map(function (st) {
+          var chips = st.lines.map(function (ln) {
+            return (
+              '<span class="line-chip" style="background:' + ln.color + ";color:" + ln.ink + '">' +
+              esc(ln.label) + "</span>"
+            );
+          }).join("");
+          return (
+            '<div class="station"><p class="station-line1"><span class="station-name">' +
+            esc(st.name) + "</span>" + chips + '</p><p class="station-exit">' + esc(st.exit) + "</p></div>"
+          );
+        }).join("");
+        el.innerHTML =
+          '<section class="sched-section first" aria-label="公式リンク">' + schedHeading("公式リンク") +
+          '<div class="sched-frames">' +
+          linkFrame({
+            href: "https://lp.openrec.jp/hyper-game-event-final/",
+            ariaLabel: "ハイゲFINAL公式サイトを開く",
+            chip: "公式サイト", chipStyle: CHIP_SCHEDULE,
+            name: "公式サイト", description: "イベントの詳細・チケット情報はこちら",
+          }) +
+          linkFrame({
+            href: "https://x.com/hypergameinfo",
+            ariaLabel: "ハイゲFINAL公式X（旧Twitter）を開く",
+            chip: "公式X", chipStyle: CHIP_SCHEDULE,
+            name: "公式X", description: "最新情報はこちら（@hypergameinfo）",
+          }) +
+          "</div></section>" +
+          '<section class="sched-section" aria-label="タイムライン">' + schedHeading("タイムライン") +
+          '<div class="days-grid">' + DAYS.map(dayTimelineHtml).join("") + "</div></section>" +
+          '<section class="sched-section" aria-label="会場">' + schedHeading("会場") +
+          '<div class="venue-card"><div class="venue-row"><p class="venue-name">東京ドーム</p>' +
+          '<p class="venue-addr">〒112-0004 東京都文京区後楽1-3-61</p>' +
+          '<a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E3%83%89%E3%83%BC%E3%83%A0" target="_blank" rel="noreferrer" aria-label="東京ドームを地図で開く">地図で開く<span aria-hidden="true">→</span></a></div>' +
+          '<p class="stations-label">最寄り駅</p><div class="stations">' + stations + "</div></div></section>" +
+          '<section class="sched-section" aria-label="注意事項">' + schedHeading("注意事項") +
+          '<ul class="legend" aria-label="出典の凡例">' + legend + "</ul>" +
+          '<div class="notes-grid">' + notes + "</div>" +
+          '<p class="source-line">出典：ハイゲFINAL公式サイトのFAQ、東京ドーム公式サイト「<a href="https://www.tokyo-dome.co.jp/dome/guide/caution-event" target="_blank" rel="noreferrer">イベント来場時のお願い</a>」ほか公式案内（2026年11月21日確認）</p></section>';
+      }
+
+      // ---------- countdown badge (JST) ----------
+      function eventCountdownText() {
+        var parts = new Intl.DateTimeFormat("en-US", {
+          timeZone: "Asia/Tokyo", year: "numeric", month: "numeric", day: "numeric",
+        }).formatToParts(new Date());
+        var get = function (type) {
+          for (var i = 0; i < parts.length; i++) if (parts[i].type === type) return Number(parts[i].value);
+          return 0;
+        };
+        var todayUtc = Date.UTC(get("year"), get("month") - 1, get("day"));
+        var day1Utc = Date.UTC(2026, 10, 28);
+        var diff = Math.round((day1Utc - todayUtc) / 86400000);
+        if (diff > 0) return "あと" + diff + "日";
+        if (diff === 0) return "本日 DAY1";
+        if (diff === -1) return "本日 DAY2（最終日）";
+        return "終了しました";
+      }
+      function renderBadge() {
+        var badge = document.getElementById("countBadge");
+        var text = eventCountdownText();
+        badge.setAttribute("aria-label", text);
+        var m = /^あと(\d+)日$/.exec(text);
+        if (m) {
+          badge.innerHTML =
+            '<span class="count-stack"><span class="count-ato">あと</span>' +
+            '<span class="count-num-row"><span class="count-num">' + m[1] +
+            '</span><span class="count-day">日</span></span></span>';
+        } else {
+          badge.textContent = text;
+        }
+      }
+
+      // ---------- tabs & global embed controls ----------
+      function setTab(tab) {
+        var live = tab === "live";
+        document.getElementById("livePage").hidden = !live;
+        document.getElementById("schedulePage").hidden = live;
+        document.getElementById("tabLive").setAttribute("aria-pressed", String(live));
+        document.getElementById("tabSchedule").setAttribute("aria-pressed", String(!live));
+        if (live) initStepped();
+      }
+      document.getElementById("tabLive").addEventListener("click", function () { setTab("live"); });
+      document.getElementById("tabSchedule").addEventListener("click", function () { setTab("schedule"); });
+      document.addEventListener("click", function (e) {
+        var t = e.target;
+        if (!(t instanceof Element)) return;
+        var close = t.closest("[data-close]");
+        if (close) { closePlayer(close.getAttribute("data-close")); return; }
+        var reload = t.closest("[data-reload]");
+        if (reload) {
+          var rec = playerHosts[reload.getAttribute("data-reload")];
+          if (rec) { rec.responded = false; renderEmbed(rec); }
+          return;
+        }
+        var hc = t.closest("[data-hintclose]");
+        if (hc) {
+          var rec2 = playerHosts[hc.getAttribute("data-hintclose")];
+          if (rec2) {
+            var hint = rec2.el.querySelector("[data-hint]");
+            if (hint) hint.hidden = true;
+            if (rec2.hintTimer) window.clearTimeout(rec2.hintTimer);
+          }
+        }
+      });
+
+      renderBadge();
+      renderLivePage();
+      renderSchedulePage();
+    </script>
+  </body>
+</html>
