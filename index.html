@@ -471,26 +471,30 @@
 // refreshes the stream status in place. Change the URL here when the
 // real endpoint is ready. If the fetch fails, the snapshot baked into
 // this page stays on screen.
-// Expected JSON:
+// JSON returned by the Worker (verified against the live response):
 // {
-//   "updatedAt": "2026-11-21T03:05:00+09:00",
-//   "players": {
-//     "選手名": { "title": "配信タイトル", "game": "ゲーム名", "viewers": 1234,
-//                 "platform": "twitch",
-//                 "startedAt": "2026-11-21T01:16:00+09:00",
-//                 "thumbnailUrl": "https://..." }
-//   },
-//   "host": {
-//     "live": { "title": "...", "game": "...", "viewers": 17052,
-//               "startedAt": "...", "thumbnailUrl": "https://..." },
-//     "past": [{ "title": "...", "date": "11月21日", "duration": "4時間41分",
-//                "watchUrl": "https://www.twitch.tv/videos/...",
-//                "thumbnailUrl": "https://..." }]
-//   }
+//   "checkedAt": "2026-11-20T18:53:34.949Z",
+//   "host": { "name": "加藤純一", "live": true, "platform": "twitch",
+//             "title": "...", "game": "...", "viewers": 16602,
+//             "startedAt": "...", "thumbnailUrl": "https://...",
+//             "watchUrl": "https://www.twitch.tv/kato_junichi0817",
+//             "pastBroadcasts": [{ "title": "...",
+//               "url": "https://www.twitch.tv/videos/...",
+//               "thumbnailUrl": "https://...",
+//               "publishedAt": "...", "duration": "2h47m12s" }] },
+//   "players": [{ "name": "柊ツルギ", "team": "k4sen", "live": true,
+//                 "platform": "twitch", "title": "...", "game": "...",
+//                 "viewers": 2805, "startedAt": "...",
+//                 "thumbnailUrl": "https://...", "watchUrl": "https://..." },
+//               ... 54 entries ]
 // }
-// Players missing from "players" are treated as offline; "host.live"
-// may be null when 加藤純一 is offline. "startedAt" is optional; an
-// "elapsed" string is used as-is when it is absent.
+// "players" is an array matched by each entry's "name". When a player
+// is offline, "live" is false and platform/title/game/viewers/
+// startedAt/thumbnailUrl are null (only "watchUrl" is set). The host
+// is a single flat object; its past broadcasts use "url",
+// "publishedAt" and an "HhMmSs" duration, converted for display in
+// applyStatus. If a payload does not match this shape, the snapshot
+// baked into this page stays on screen.
 var STATUS_ENDPOINT = "https://haige-status.ichibuno-b.workers.dev/";
 var STATUS_POLL_MS = 2 * 60 * 1000;
 // ---------- embedded images (data URIs, single-file build) ----------
@@ -649,7 +653,7 @@ LIVE_PLAYERS.sort(function (a, b) { return b.live.viewers - a.live.viewers;});
 var LIVE_TOTAL = LIVE_PLAYERS.length + 1; // + 加藤純一
 
 // 「最終確認」labels for the snapshot; replaced by the fetched
-// status's updatedAt once the auto-refresh succeeds.
+// status's checkedAt once the auto-refresh succeeds.
 var checkedLabelShort = "11月21日 2:55";
 var checkedLabelLong = "2026年11月21日2:55";
 
@@ -1727,8 +1731,43 @@ bindThumbButton(rec);
         }
         return fallback != null ? String(fallback) : "";
       }
+      function formatPastDate(iso) {
+        var t = iso ? Date.parse(iso) : NaN;
+        if (isNaN(t)) return "";
+        var parts = new Intl.DateTimeFormat("en-US", {
+          timeZone: "Asia/Tokyo", month: "numeric", day: "numeric",
+        }).formatToParts(new Date(t));
+        var g = {};
+        parts.forEach(function (pt) { g[pt.type] = pt.value; });
+        return g.month + "月" + g.day + "日";
+      }
+      function formatDuration(dur) {
+        if (dur == null) return "";
+        var s = String(dur);
+        if (!s) return "";
+        // Already display-ready (e.g. the snapshot's "4時間41分").
+        if (/[時間分秒]/.test(s)) return s;
+        var h = 0, m = 0, sec = 0, matched = false;
+        var hm = s.match(/(\d+)\s*h/i);
+        if (hm) { h = Number(hm[1]); matched = true; }
+        var mm = s.match(/(\d+)\s*m(?!s)/i);
+        if (mm) { m = Number(mm[1]); matched = true; }
+        var sm = s.match(/(\d+)\s*s/i);
+        if (sm) { sec = Number(sm[1]); matched = true; }
+        if (!matched) {
+          if (/^\d+$/.test(s)) { sec = Number(s); matched = true; }
+          else return s;
+        }
+        if (h > 0) return h + "時間" + m + "分";
+        if (m > 0) return m + "分";
+        if (sec > 0) return sec + "秒";
+        return "0分";
+      }
       function buildLive(entry, twitchLogin) {
         if (!entry || typeof entry !== "object") return null;
+        // Worker entries carry an explicit live flag; an offline entry
+        // (live:false, detail fields null) must never become a card.
+        if (entry.live === false) return null;
         return {
           platform: entry.platform === "youtube" ? "youtube" : "twitch",
           title: entry.title != null ? String(entry.title) : "",
@@ -1748,27 +1787,60 @@ bindThumbButton(rec);
       }
       function applyStatus(data) {
         if (!data || typeof data !== "object") return;
-        var map = data.players;
-        if (!map || typeof map !== "object") return;
+        // The Worker returns "players" as an array of per-player
+        // objects (each carrying its own "name"), not a name-keyed
+        // map. Any other shape is unexpected: keep the snapshot (or
+        // the last good) display untouched instead of marking
+        // everyone offline.
+        if (!Array.isArray(data.players) || data.players.length === 0) return;
+        var byName = {};
+        data.players.forEach(function (e) {
+          if (e && typeof e === "object" && typeof e.name === "string") {
+            byName[e.name] = e;
+          }
+        });
+        var matched = 0;
         PLAYERS.forEach(function (p) {
-          var entry = Object.prototype.hasOwnProperty.call(map, p.name)
-            ? map[p.name]
+          if (Object.prototype.hasOwnProperty.call(byName, p.name)) matched++;
+        });
+        if (matched === 0) return;
+        PLAYERS.forEach(function (p) {
+          var entry = Object.prototype.hasOwnProperty.call(byName, p.name)
+            ? byName[p.name]
             : null;
+          // A roster player absent from a well-formed payload counts
+          // as offline; buildLive also returns null for live:false.
           p.live = entry ? buildLive(entry, p.twitchLogin) : null;
         });
         if (data.host && typeof data.host === "object") {
+          // The host is one flat object whose "live" is a boolean on
+          // the object itself, not a nested { live: {...} }.
           HOST.live = data.host.live
-            ? buildLive(data.host.live, HOST.twitchLogin)
+            ? buildLive(data.host, HOST.twitchLogin)
             : null;
-          if (Array.isArray(data.host.past)) {
-            HOST.past = data.host.past
+          var pastSrc = Array.isArray(data.host.pastBroadcasts)
+            ? data.host.pastBroadcasts
+            : Array.isArray(data.host.past)
+              ? data.host.past
+              : null;
+          if (pastSrc) {
+            HOST.past = pastSrc
               .filter(function (v) { return v && typeof v === "object"; })
+              .slice(0, 2)
               .map(function (v) {
                 return {
                   title: v.title != null ? String(v.title) : "",
-                  date: v.date != null ? String(v.date) : "",
-                  duration: v.duration != null ? String(v.duration) : "",
-                  watchUrl: v.watchUrl != null ? String(v.watchUrl) : "",
+                  date:
+                    v.date != null
+                      ? String(v.date)
+                      : formatPastDate(v.publishedAt),
+                  duration: formatDuration(v.duration),
+                  watchUrl:
+                    v.url != null
+                      ? String(v.url)
+                      : v.watchUrl != null
+                        ? String(v.watchUrl)
+                        : "",
                   thumbnailUrl: v.thumbnailUrl != null ? String(v.thumbnailUrl) : "",
                 };
               });
@@ -1777,7 +1849,7 @@ bindThumbButton(rec);
         LIVE_PLAYERS = PLAYERS.filter(function (p) { return p.live; });
         LIVE_PLAYERS.sort(function (a, b) { return b.live.viewers - a.live.viewers; });
         LIVE_TOTAL = LIVE_PLAYERS.length + (HOST.live ? 1 : 0);
-        var labels = formatCheckedLabels(data.updatedAt);
+        var labels = formatCheckedLabels(data.checkedAt || data.updatedAt);
         if (labels) {
           checkedLabelShort = labels.short;
           checkedLabelLong = labels.long;
