@@ -228,7 +228,7 @@
       .official-body { margin-top: 16px; }
       .main-broadcast-head { display: flex; align-items: center; gap: 8px; font-size: 15px; }
       @media (min-width: 640px) { .main-broadcast-head { font-size: 16px; } }
-      .frames-2 { margin-top: 12px; display: grid; grid-template-columns: 1fr; gap: 8px; }
+      .frames-2 { margin-top: 12px; display: grid; grid-template-columns: 1fr; gap: 12px; }
       .frames-2 > *, .frames-3 > *, .sched-frames > * { min-width: 0; }
       @media (min-width: 640px) { .frames-2 { grid-template-columns: 1fr 1fr; } }
       .official-note { margin-top: 12px; font-size: 12px; line-height: 1.625; color: var(--dim); }
@@ -304,8 +304,8 @@
       .platform-viewers { display: flex; flex-shrink: 0; align-items: center; gap: 6px; font-size: 11px; line-height: 20px; }
 
       /* ---------- live cards ---------- */
-      .live-section { margin-top: 20px; }
-      @media (min-width: 640px) { .live-section { margin-top: 24px; } }
+      .live-section { margin-top: 24px; }
+      @media (min-width: 640px) { .live-section { margin-top: 32px; } }
       .live-grid { display: grid; grid-auto-rows: 1fr; grid-template-columns: repeat(2, 1fr); gap: 10px; }
       .live-grid > * { min-width: 0; }
       @media (min-width: 640px) { .live-grid { gap: 12px; } }
@@ -420,10 +420,10 @@
 
       /* ---------- host card ---------- */
       .host-card {
-        margin-top: 12px; border-radius: var(--radius); background: var(--surface);
+        margin-top: 16px; border-radius: var(--radius); background: var(--surface);
         padding: 6px 12px; border: 1px solid var(--border);
       }
-      @media (min-width: 640px) { .host-card { margin-top: 16px; padding: 8px 16px; } }
+      @media (min-width: 640px) { .host-card { margin-top: 20px; padding: 8px 16px; } }
       .host-card.open { padding: 10px 12px; }
       @media (min-width: 640px) { .host-card.open { padding: 12px 16px; } }
       .host-head { display: flex; width: 100%; column-gap: 10px; cursor: pointer; }
@@ -504,7 +504,8 @@
       }
       .past-meta { margin-top: 2px; display: block; font-size: 12px; line-height: 20px; color: var(--dim); }
 
-      .page-footer { margin-top: 16px; font-size: 12px; line-height: 1.625; color: var(--dim); }
+      .page-footer { margin-top: 24px; font-size: 12px; line-height: 1.625; color: var(--dim); }
+      @media (min-width: 640px) { .page-footer { margin-top: 32px; } }
 
       /* ---------- schedule page ---------- */
       .sched-section { margin-top: 24px; }
@@ -954,7 +955,7 @@ var EVENT_GAME_MATCHES = [
   { card: "eFootball", names: ["eFootball"] },
   { card: "ARC Raiders", names: ["ARC Raiders"] },
   { card: "オーバーウォッチ", names: ["Overwatch", "Overwatch 2"] },
-  { card: "パワフルプロ野球2026-2027", names: ["パワフルプロ野球2026-2027", "eBASEBALLパワフルプロ野球2026-2027"] },
+  { card: "パワフルプロ野球2026-2027", names: ["パワフルプロ野球2026-2027", "eBASEBALLパワフルプロ野球2026-2027", "Powerful Pro Yakyuu 2026-2027"] },
 ];
 function normalizeGameName(s) {
   return String(s).toLowerCase().replace(/[™®\s　]/g, "");
