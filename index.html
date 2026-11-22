@@ -344,6 +344,30 @@
       }
       @media (min-width: 640px) { .card-title { margin-top: 8px; height: 24px; font-size: 16px; line-height: 24px; } }
       .card-title:hover { text-decoration: underline; text-underline-offset: 2px; }
+      /* ---------- inline player (PC only) ---------- */
+      .media-fill { position: absolute; inset: 0; display: block; }
+      .media-play {
+        position: absolute; inset: 0; z-index: 3; display: none; width: 100%;
+        align-items: center; justify-content: center;
+        background: transparent; border: 0; padding: 0; cursor: pointer;
+      }
+      @media (min-width: 1024px) { .media-play { display: flex; } }
+      .play-badge {
+        display: flex; height: 56px; width: 56px; align-items: center; justify-content: center;
+        border-radius: 9999px; background: rgba(0,0,0,0.65); color: #fff;
+        transition: transform 0.15s ease, background 0.15s ease;
+      }
+      .media-play:hover .play-badge { background: rgba(0,0,0,0.8); transform: scale(1.06); }
+      @media (prefers-reduced-motion: reduce) { .play-badge { transition: none; } }
+      .media-frame { position: absolute; inset: 0; height: 100%; width: 100%; border: 0; }
+      .media-close {
+        position: absolute; top: 6px; right: 6px; z-index: 5;
+        display: flex; height: 28px; width: 28px; min-height: 0;
+        align-items: center; justify-content: center; border-radius: 9999px;
+        background: rgba(0,0,0,0.7); color: #fff; border: 1px solid rgba(255,255,255,0.35);
+        font-size: 15px; line-height: 1; padding: 0; cursor: pointer;
+      }
+
       .game-row { margin-top: 4px; display: flex; height: 20px; align-items: center; gap: 8px; }
       .game-row .grow { display: flex; min-width: 0; flex: 1; align-items: center; }
       .no-live {
@@ -451,15 +475,32 @@
       .host-live-badge .live-dot { height: 8px; width: 8px; }
       .host-chev { margin-left: auto; }
       .host-detail { margin-top: 12px; }
-      .host-detail-live { display: flex; flex-direction: column; gap: 16px; }
-      @media (min-width: 1024px) { .host-detail-live { flex-direction: row; } }
+      .host-detail-cols { display: flex; flex-direction: column; gap: 16px; }
+      @media (min-width: 1024px) {
+        .host-detail-cols { display: grid; grid-template-columns: 3fr 2fr; gap: 24px; align-items: stretch; }
+      }
+      .host-current-cell { display: flex; align-items: center; justify-content: center; min-width: 0; }
+      .host-current { display: flex; flex-direction: column; gap: 12px; width: 100%; min-width: 0; }
+      @media (min-width: 1024px) {
+        .host-current { flex-direction: row; align-items: center; gap: 16px; }
+      }
       .host-thumb {
         position: relative; display: block; aspect-ratio: 16 / 9; width: 100%;
-        flex-shrink: 0; align-self: flex-start; overflow: hidden;
+        max-width: 560px; flex-shrink: 0; overflow: hidden;
         border-radius: var(--radius); background: var(--surface-2);
       }
-      @media (min-width: 640px) { .host-thumb { width: 300px; } }
+      @media (max-width: 1023.5px) { .host-thumb { margin: 0 auto; } }
+      @media (min-width: 1024px) {
+        .host-current .host-thumb { flex: 1 1 auto; min-width: 0; }
+      }
       .host-info { display: flex; min-width: 0; flex: 1; flex-direction: column; }
+      @media (min-width: 1024px) {
+        .host-current .host-info { flex: 0 1 250px; min-width: 170px; }
+      }
+      .host-past-cell { min-width: 0; }
+      @media (min-width: 1024px) {
+        .host-past-cell { border-left: 1px solid var(--border); padding-left: 20px; }
+      }
       .host-detail-title {
         display: block; font-size: 15px; line-height: 22px; color: var(--text);
         text-decoration: none; display: -webkit-box; -webkit-line-clamp: 2;
@@ -486,6 +527,8 @@
       @media (min-width: 1024px) { .past-grid { grid-template-columns: repeat(3, 1fr); } }
       .past-column { margin-top: 6px; display: flex; flex-direction: column; gap: 12px; }
       @media (min-width: 1024px) { .past-column { display: grid; grid-template-columns: repeat(3, 1fr); } }
+      .past-side { margin-top: 6px; display: flex; flex-direction: column; gap: 12px; }
+      .past-side > li { min-width: 0; }
       .past-grid > li, .past-column > li { min-width: 0; }
       @media (min-width: 1024px) {
         .past-grid > li, .past-column > li { border-left: 1px solid var(--border); padding-left: 12px; }
@@ -1021,7 +1064,8 @@ var CHIP_SCHEDULE = "background:var(--schedule-accent);color:#12141c";
 // ---------- past broadcasts ----------
 function pastBroadcasts(host, layout) {
   if (!host.past || host.past.length === 0) return "";
-  var wide = layout === "column";
+  var wide = layout === "column" || layout === "side";
+  var clamp = layout === "column";
   var items = host.past.slice(0, 3).map(function (v) {
     var meta = [v.date, v.duration].filter(Boolean).join(" ・ ");
     return (
@@ -1030,14 +1074,83 @@ function pastBroadcasts(host, layout) {
       "の過去配信「" + esc(v.title) + '」を見る（Twitch）">' +
       '<span class="past-thumb' + (wide ? " wide" : "") + '">' +
       (v.thumbnailUrl ? '<img src="' + esc(v.thumbnailUrl) + '" alt="" loading="lazy" />' : "") +
-      '</span><span class="past-texts"><span class="past-title' + (wide ? " clamp2" : "") +
+      '</span><span class="past-texts"><span class="past-title' + (clamp ? " clamp2" : "") +
       '" title="' + esc(v.title) + '">' + esc(v.title) + "</span>" +
       (meta ? '<span class="past-meta">' + esc(meta) + "</span>" : "") +
       "</span></a></li>"
     );
   }).join("");
-  var cls = layout === "grid" ? "past-grid" : layout === "column" ? "past-column" : "past-list";
+  var cls = layout === "grid" ? "past-grid" : layout === "column" ? "past-column" : layout === "side" ? "past-side" : "past-list";
   return '<div><p class="past-head">過去の配信</p><ul class="' + cls + '">' + items + "</ul></div>";
+}
+
+// ---------- inline player media (PC only) ----------
+// On wide screens the thumbnail carries a full-cover play button;
+// clicking it swaps the same box, at the same size, for the platform
+// player. On narrow screens the button is hidden by CSS and the
+// thumbnail stays a link to the external watch page.
+var PLAY_SVG =
+  '<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+function twitchLoginFromUrl(url) {
+  if (!url) return "";
+  var m = String(url).match(/twitch\.tv\/([A-Za-z0-9_]+)/);
+  return m ? m[1] : "";
+}
+function youtubeIdFromUrl(url) {
+  if (!url) return "";
+  var s = String(url);
+  var m = s.match(/[?&]v=([A-Za-z0-9_-]{6,})/);
+  if (m) return m[1];
+  m = s.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/);
+  if (m) return m[1];
+  m = s.match(/\/(?:live|embed|shorts)\/([A-Za-z0-9_-]{6,})/);
+  if (m) return m[1];
+  return "";
+}
+function mediaHtml(o) {
+  var channel = o.twitchLogin || twitchLoginFromUrl(o.href);
+  var videoId = youtubeIdFromUrl(o.href);
+  var canPlay =
+    (o.platform === "twitch" && !!channel) ||
+    (o.platform === "youtube" && !!videoId);
+  var inner =
+    '<a class="media-fill" href="' + esc(o.href || "#") +
+    '" target="_blank" rel="noreferrer" aria-label="' + esc(o.ariaLabel) + '">' +
+    (o.thumbUrl
+      ? '<img class="thumb-img" src="' + esc(o.thumbUrl) + '" alt="' +
+        esc(o.imgAlt) + '" loading="lazy" />'
+      : "") +
+    (o.badges || "") + "</a>" +
+    (canPlay
+      ? '<button type="button" class="media-play" aria-label="' +
+        esc(o.name + "の配信をこのページで再生する") +
+        '"><span class="play-badge">' + PLAY_SVG + "</span></button>"
+      : "");
+  return (
+    '<div class="' + o.boxClass + ' media-box" data-media data-platform="' +
+    esc(o.platform || "") + '" data-channel="' + esc(channel || "") +
+    '" data-videoid="' + esc(videoId || "") + '">' + inner + "</div>"
+  );
+}
+function playerEmbedSrc(box) {
+  var platform = box.getAttribute("data-platform");
+  if (platform === "twitch") {
+    var channel = box.getAttribute("data-channel");
+    if (!channel) return "";
+    return (
+      "https://player.twitch.tv/?channel=" + encodeURIComponent(channel) +
+      "&parent=" + window.location.hostname + "&autoplay=true"
+    );
+  }
+  if (platform === "youtube") {
+    var vid = box.getAttribute("data-videoid");
+    if (!vid) return "";
+    return (
+      "https://www.youtube.com/embed/" + encodeURIComponent(vid) +
+      "?autoplay=1&rel=0"
+    );
+  }
+  return "";
 }
 
 // ---------- host card （加藤純一） ----------
@@ -1069,10 +1182,12 @@ function hostCardHtml() {
     '<span style="display:inline-flex;flex-shrink:0' + (live ? "" : ";opacity:0.55") + '">' +
     xLink(host.xHandle, host.name, 13) + "</span>" +
     (live
-      ? '<span class="host-live-group"><span class="gt-wrap">' + gameTag(live.game) + "</span>" +
-        '<span class="host-sep" aria-hidden="true">｜</span>' +
-        '<span class="host-stream-title" title="' + esc(live.title || "") + '">' +
-        esc(live.title || "配信中") + "</span></span>"
+      ? (hostExpanded
+          ? ""
+          : '<span class="host-live-group"><span class="host-stream-title" title="' +
+            esc(live.title || "") + '">' + esc(live.title || "配信中") + "</span>" +
+            '<span class="host-sep" aria-hidden="true">｜</span>' +
+            '<span class="gt-wrap">' + gameTag(live.game) + "</span></span>")
       : '<span class="host-offline">オフライン</span>') +
     (live
       ? '<span class="host-live-badge"><span class="live-dot"></span>LIVE</span>'
@@ -1086,23 +1201,37 @@ function hostCardHtml() {
   if (live) {
     var thumbUrl = live.thumbnailUrl || PREVIEW_DATA[host.twitchLogin] || "";
     var elapsed = formatElapsed(live.startedAt);
-    detail =
-      '<div class="host-detail"><div class="host-detail-live">' +
-      '<a class="host-thumb" href="' + esc(live.watchUrl || twitchUrl) +
-      '" target="_blank" rel="noreferrer" aria-label="' + esc(host.name) + "の配信を見る（" +
-      (live.platform === "youtube" ? "YouTube" : "Twitch") + '）">' +
-      (thumbUrl ? '<img class="thumb-img" src="' + esc(thumbUrl) + '" alt="' +
-        esc(host.name) + 'の配信サムネイル" loading="lazy" />' : "") + "</a>" +
+    var platName = live.platform === "youtube" ? "YouTube" : "Twitch";
+    var media = mediaHtml({
+      boxClass: "host-thumb",
+      href: live.watchUrl || twitchUrl,
+      ariaLabel: host.name + "の配信を見る（" + platName + "）",
+      thumbUrl: thumbUrl,
+      imgAlt: host.name + "の配信サムネイル",
+      badges: "",
+      platform: live.platform,
+      twitchLogin: host.twitchLogin,
+      name: host.name,
+    });
+    var current =
+      '<div class="host-current-cell"><div class="host-current">' + media +
       '<div class="host-info">' +
       '<a class="host-detail-title" href="' + esc(live.watchUrl || twitchUrl) +
       '" target="_blank" rel="noreferrer" title="' + esc(live.title || "") + '" aria-label="' +
-      esc(host.name) + "の配信を見る（" + (live.platform === "youtube" ? "YouTube" : "Twitch") + '）">' +
+      esc(host.name) + "の配信を見る（" + platName + '）">' +
       esc(live.title || "配信中") + "</a>" +
       '<span class="host-game-row">' + gameTag(live.game) + "</span>" +
       '<div class="host-meta-row"><span class="host-meta">' +
       esc(elapsed ? "配信開始から" + elapsed : "") +
-      "</span></div></div></div>" +
-      '<div class="host-past">' + pastBroadcasts(host, "column") + "</div></div>";
+      "</span></div></div></div></div>";
+    var pastSide = pastBroadcasts(host, "side");
+    detail =
+      '<div class="host-detail">' +
+      (pastSide
+        ? '<div class="host-detail-cols">' + current +
+          '<div class="host-past-cell">' + pastSide + "</div></div>"
+        : current) +
+      "</div>";
   } else {
     detail =
       '<div class="host-detail">' + pastBroadcasts(host, "grid") + "</div>";
@@ -1129,13 +1258,17 @@ function liveCardHtml(p) {
       : "");
   return (
     '<div class="live-card" style="border:2px solid ' + (team ? team.dot : "var(--border)") + '">' +
-    '<a class="thumb-link" href="' + esc(live.watchUrl || "#") +
-    '" target="_blank" rel="noreferrer" aria-label="' + esc(p.name) + "の配信を見る（" + platLabel + '）">' +
-    (live.thumbnailUrl
-      ? '<img class="thumb-img" src="' + esc(live.thumbnailUrl) + '" alt="' +
-        esc(p.name) + 'の配信サムネイル" loading="lazy" />'
-      : "") +
-    badges + "</a>" +
+    mediaHtml({
+      boxClass: "thumb-link",
+      href: live.watchUrl || "#",
+      ariaLabel: p.name + "の配信を見る（" + platLabel + "）",
+      thumbUrl: live.thumbnailUrl || "",
+      imgAlt: p.name + "の配信サムネイル",
+      badges: badges,
+      platform: live.platform,
+      twitchLogin: p.twitchLogin,
+      name: p.name,
+    }) +
     '<div class="live-card-body"><div class="card-name-row">' +
     avatarHtml(p, 32) +
     '<span class="card-name">' + esc(p.name) + "</span>" +
@@ -2149,6 +2282,33 @@ document.addEventListener("click", function (e) {
   if (!(t instanceof Element)) return;
   var rule = t.closest("[data-rule]");
   if (rule) { jumpToGame(rule.getAttribute("data-rule")); }
+});
+document.addEventListener("click", function (e) {
+  var t = e.target;
+  if (!(t instanceof Element)) return;
+  var closeBtn = t.closest(".media-close");
+  if (closeBtn) {
+    var cbox = closeBtn.closest("[data-media]");
+    if (cbox && cbox._thumbHtml != null) {
+      cbox.innerHTML = cbox._thumbHtml;
+      cbox.classList.remove("playing");
+    }
+    return;
+  }
+  var playBtn = t.closest(".media-play");
+  if (!playBtn) return;
+  if (!window.matchMedia || !window.matchMedia("(min-width: 1024px)").matches) return;
+  var box = playBtn.closest("[data-media]");
+  if (!box) return;
+  var src = playerEmbedSrc(box);
+  if (!src) return;
+  e.preventDefault();
+  box._thumbHtml = box.innerHTML;
+  box.innerHTML =
+    '<iframe class="media-frame" src="' + esc(src) +
+    '" title="配信プレイヤー" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>' +
+    '<button type="button" class="media-close" aria-label="プレイヤーを閉じてサムネイルに戻す" title="閉じる">×</button>';
+  box.classList.add("playing");
 });
 if (window.matchMedia) {
   var smMq = window.matchMedia("(max-width: 639.5px)");
