@@ -1110,8 +1110,10 @@
 "use strict";
 // ---------- live status endpoint ----------
 // On load, and then every 2 minutes, the page fetches this JSON and
-// refreshes the stream status in place. If the fetch fails, the
-// snapshot baked into this page stays on screen.
+// refreshes the stream status in place. Each successful fetch is
+// saved to localStorage; if a fetch fails, the last saved status is
+// shown, and if there is none, the snapshot baked into this page
+// stays on screen.
 // JSON returned by the Worker:
 // {
 //   "checkedAt": "2026-11-21T14:25:12.002Z",
@@ -3893,6 +3895,30 @@ function applyStatus(data) {
   LIVE_TOTAL = PLAYERS.filter(function (p) { return p.live; }).length + (HOST.live ? 1 : 0);
   renderLivePage();
 }
+// ---------- offline fallback: last fetched status ----------
+// Every successful fetch is also saved to localStorage. When a fetch
+// fails (e.g. no signal at the venue), the saved status is shown
+// instead. The saved payload keeps its original checkedAt, so the
+// "最終確認" display stays at the time it was actually fetched.
+// With nothing saved, the snapshot baked into this page stays.
+var STATUS_CACHE_KEY = "haigeStatusCacheV1";
+function saveStatusCache(data) {
+  try {
+    window.localStorage.setItem(STATUS_CACHE_KEY, JSON.stringify(data));
+  } catch (e) {
+    // Storage unavailable or full: caching is best-effort only.
+  }
+}
+function loadStatusCache() {
+  try {
+    var raw = window.localStorage.getItem(STATUS_CACHE_KEY);
+    if (!raw) return null;
+    var parsed = JSON.parse(raw);
+    return parsed && typeof parsed === "object" ? parsed : null;
+  } catch (e) {
+    return null;
+  }
+}
 var statusInFlight = false;
 function refreshStatus() {
   if (statusInFlight || !window.fetch) return;
@@ -3903,14 +3929,33 @@ function refreshStatus() {
       if (!res.ok) throw new Error("HTTP " + res.status);
       return res.json();
     })
-    .then(function (data) { applyStatus(data); })
+    .then(function (data) {
+      saveStatusCache(data);
+      applyStatus(data);
+    })
     .catch(function () {
-      // Fetch failed: keep the snapshot (or last good) display.
+      // Fetch failed: fall back to the last saved status, if any.
+      var cached = loadStatusCache();
+      if (cached) applyStatus(cached);
     })
     .then(function () { statusInFlight = false; });
 }
 refreshStatus();
 window.setInterval(refreshStatus, STATUS_POLL_MS);
+</script>
+<script>
+"use strict";
+// ---------- service worker (offline viewing) ----------
+// Registers sw.js (placed next to this page) so the page itself can
+// be reopened without a connection. Browsers without service worker
+// support, or a missing sw.js, simply keep working as before.
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("sw.js").catch(function () {
+      // Registration failed: the page still works online as usual.
+    });
+  });
+}
 </script>
   </body>
 </html>
