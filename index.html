@@ -512,7 +512,9 @@
       .part-day { border-bottom: 1px solid var(--border); padding-bottom: 4px; font-size: 11px; line-height: 16px; color: var(--dim); }
       .part-list { margin-top: 6px; display: flex; flex-direction: column; gap: 4px; }
       .part-row { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 24px; }
-      .part-title { min-width: 0; flex: 1; white-space: nowrap; }
+      .part-row--small { font-size: 12px; }
+      .part-row--small .part-note { font-size: 11px; }
+      .part-title { min-width: 0; flex: 1; white-space: nowrap; overflow: hidden; }
       .part-note { display: inline-block; white-space: nowrap; font-size: 12px; line-height: 24px; color: var(--dim); }
       .part-icon { margin-left: auto; flex-shrink: 0; }
       .host-past-cell { min-width: 0; }
@@ -1532,6 +1534,12 @@ var HOST_PARTICIPATION = [
     ],
   },
   {
+    day: "裏ハイゲ",
+    games: [
+      { card: "ぷよぷよテトリス2", label: "ぷよぷよテトリス2", note: "vs おじじ", group: "裏（DAY1夜）", small: true },
+    ],
+  },
+  {
     day: "DAY2",
     games: [
       { card: "ARC Raiders", label: "ARC Raiders", note: "マスオTV、KH" },
@@ -1544,12 +1552,12 @@ function hostParticipationHtml() {
   var groups = HOST_PARTICIPATION.map(function (g) {
     var rows = g.games.map(function (game) {
       return (
-        '<li class="part-row"><span class="part-title">' + esc(game.label) +
+        '<li class="part-row' + (game.small ? " part-row--small" : "") + '"><span class="part-title">' + esc(game.label) +
         (game.note
           ? '<span class="part-note">（' + esc(game.note) + "）</span>"
           : "") +
         '</span><span class="part-icon">' +
-        ruleLink({ card: game.card, group: null }) + "</span></li>"
+        ruleLink({ card: game.card, group: game.group || null }) + "</span></li>"
       );
     }).join("");
     return (
@@ -3651,6 +3659,7 @@ document.addEventListener("keydown", function (e) {
 // Light announcements only (a newly added page, the launch).
 // Newest first; only the latest entry is ever displayed.
 var SITE_NOTICES = [
+  { date: "2026-11-27", text: "物販ページに販売場所マップ、参戦予定に裏ハイゲを追加しました" },
   { date: "2026-11-23", text: "『物販』『テーマソング』ページを追加しました" },
   { date: "2026-11-21", text: "サイトを公開しました" },
 ];
